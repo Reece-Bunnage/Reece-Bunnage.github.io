@@ -25,7 +25,7 @@ export default function ProjectDetail() {
       <article className="shell py-12 sm:py-16">
         <Link
           to="/projects"
-          className="font-head text-sm font-bold text-accent hover:text-mist"
+          className="font-head text-sm font-bold text-ground hover:text-ink"
         >
           <span aria-hidden="true">&larr;</span> All projects
         </Link>
@@ -60,7 +60,7 @@ export default function ProjectDetail() {
                   key={bullet}
                   className="relative pl-6 leading-relaxed text-smoke-dark
                              before:absolute before:left-0 before:top-2.5 before:h-2
-                             before:w-2 before:rounded-full before:bg-accent"
+                             before:w-2 before:rounded-full before:bg-steel"
                 >
                   {bullet}
                 </li>
@@ -68,7 +68,7 @@ export default function ProjectDetail() {
             </ul>
 
             {project.outcome && (
-              <p className="mt-8 rounded-xl border-l-4 border-accent bg-mist/25 p-5
+              <p className="mt-8 rounded-xl border-l-4 border-ground bg-mist/25 p-5
                             font-head font-bold text-ground">
                 {project.outcome}
               </p>
@@ -100,7 +100,7 @@ export default function ProjectDetail() {
         <div className="mt-8 text-right">
           <Link
             to={`/projects/${next.slug}`}
-            className="font-head text-sm font-bold text-accent hover:text-mist"
+            className="font-head text-sm font-bold text-ground hover:text-ink"
           >
             Next: {next.title} <span aria-hidden="true">&rarr;</span>
           </Link>

@@ -1,11 +1,12 @@
 import { profile } from '../data/profile.js'
+import Band from './Band.jsx'
 import Reveal from './Reveal.jsx'
 
 export default function ContactCta() {
   return (
-    <section className="shell py-16 sm:py-24">
+    <Band tone="teal">
       <Reveal>
-        <div className="rounded-2xl bg-ink p-8 text-center shadow-lg shadow-ink/30 sm:p-14">
+        <div className="text-center">
           <h2 className="text-white">Let&rsquo;s Connect</h2>
           <div className="mx-auto mt-3 h-1 w-16 rounded-full bg-accent" />
           <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-mist">
@@ -14,20 +15,20 @@ export default function ContactCta() {
             should not be manual, I&rsquo;d like to hear about it.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
-            <a href={`mailto:${profile.email}`} className="btn-primary">
+            <a href={`mailto:${profile.email}`} className="btn-on-dark">
               {profile.email}
             </a>
             <a
               href={profile.linkedin}
               target="_blank"
               rel="noreferrer"
-              className="btn-ghost"
+              className="btn-on-dark-ghost"
             >
               Connect on LinkedIn
             </a>
           </div>
         </div>
       </Reveal>
-    </section>
+    </Band>
   )
 }

@@ -8,12 +8,12 @@ function Portrait() {
   const [failed, setFailed] = useState(false)
 
   const frame =
-    'h-56 w-56 rounded-full border-4 border-accent object-cover shadow-2xl shadow-ink/50 sm:h-72 sm:w-72'
+    'h-64 w-64 rounded-2xl object-cover shadow-xl shadow-ink/25 sm:h-80 sm:w-80'
 
   if (failed) {
     return (
       <div
-        className={`${frame} flex items-center justify-center bg-ink font-head text-6xl font-bold text-accent`}
+        className={`${frame} flex items-center justify-center bg-ground font-head text-6xl font-bold text-white`}
         aria-hidden="true"
       >
         RB
@@ -39,11 +39,11 @@ export default function Hero() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: 'easeOut' }}
       >
-        <p className="font-head text-sm font-bold uppercase tracking-[0.2em] text-accent">
+        <p className="font-head text-sm font-bold uppercase tracking-[0.2em] text-ground">
           {profile.role}
         </p>
-        <h1 className="mt-3 text-white">{profile.name}</h1>
-        <p className="mt-5 max-w-xl text-lg leading-relaxed text-mist">
+        <h1 className="mt-3">{profile.name}</h1>
+        <p className="mt-5 max-w-xl text-lg leading-relaxed text-smoke-dark">
           {profile.tagline}
         </p>
 

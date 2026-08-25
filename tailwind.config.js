@@ -8,6 +8,7 @@ export default {
         ink: '#041e2e',
         accent: '#05F2DB',
         mist: '#B4ECEB',
+        cream: '#F1F0E8',
         steel: '#6CA4AC',
         smoke: {
           dark: '#141414',

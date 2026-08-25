@@ -20,7 +20,7 @@ const LINKS = [
   { key: 'resume', label: 'Resume', href: profile.resume, external: true },
 ]
 
-export default function SocialLinks({ className = '' }) {
+export default function SocialLinks({ className = '', onDark = false }) {
   return (
     <ul className={`flex flex-wrap items-center gap-3 ${className}`}>
       {LINKS.map((link) => (
@@ -30,9 +30,12 @@ export default function SocialLinks({ className = '' }) {
             aria-label={link.label}
             title={link.label}
             {...(link.external ? { target: '_blank', rel: 'noreferrer' } : {})}
-            className="flex h-10 w-10 items-center justify-center rounded-full border-2
-                       border-mist/40 text-mist transition
-                       hover:border-accent hover:text-accent"
+            className={`flex h-10 w-10 items-center justify-center rounded-full
+                        border-2 transition ${
+                          onDark
+                            ? 'border-mist/40 text-mist hover:border-accent hover:text-accent'
+                            : 'border-steel text-ground hover:border-ground hover:bg-ground hover:text-white'
+                        }`}
           >
             <svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor" aria-hidden="true">
               {ICONS[link.key]}

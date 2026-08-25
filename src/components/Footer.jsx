@@ -4,7 +4,7 @@ import SocialLinks from './SocialLinks.jsx'
 
 export default function Footer() {
   return (
-    <footer className="border-t border-white/10 bg-ink">
+    <footer className="bg-ink">
       <div className="shell flex flex-col items-center gap-6 py-10 sm:flex-row sm:justify-between">
         <div className="text-center sm:text-left">
           <p className="font-head text-base font-bold text-white">{profile.name}</p>
@@ -12,7 +12,7 @@ export default function Footer() {
             {profile.role} &middot; {profile.location}
           </p>
         </div>
-        <SocialLinks />
+        <SocialLinks onDark />
       </div>
       <div className="shell border-t border-white/10 py-5">
         <p className="text-center text-xs text-steel">

@@ -8,7 +8,7 @@ export default function Timeline({ items }) {
           <Reveal delay={i * 0.05}>
             <span
               className={`absolute -left-[9px] mt-2 h-4 w-4 rounded-full border-2 border-white ${
-                item.current ? 'bg-accent' : 'bg-steel'
+                item.current ? 'bg-ground' : 'bg-steel'
               }`}
               aria-hidden="true"
             />
@@ -31,7 +31,7 @@ export default function Timeline({ items }) {
                   key={bullet}
                   className="relative pl-5 text-sm leading-relaxed text-smoke-dark
                              before:absolute before:left-0 before:top-2 before:h-1.5
-                             before:w-1.5 before:rounded-full before:bg-accent"
+                             before:w-1.5 before:rounded-full before:bg-steel"
                 >
                   {bullet}
                 </li>

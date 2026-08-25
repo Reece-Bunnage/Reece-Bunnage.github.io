@@ -4,6 +4,7 @@ import Hero from '../components/Hero.jsx'
 import ProjectCard from '../components/ProjectCard.jsx'
 import SectionHeading from '../components/SectionHeading.jsx'
 import Reveal from '../components/Reveal.jsx'
+import Band from '../components/Band.jsx'
 import ContactCta from '../components/ContactCta.jsx'
 import { featuredProjects } from '../data/projects.js'
 import { profile } from '../data/profile.js'
@@ -17,9 +18,8 @@ export default function Home() {
     <>
       <Hero />
 
-      <section className="shell pb-8">
+      <Band tone="cream">
         <SectionHeading
-          light
           title="Featured Projects"
           subtitle="Client work, university systems, and things I built because I wanted them to exist."
         />
@@ -31,11 +31,11 @@ export default function Home() {
           ))}
         </div>
         <div className="mt-10 text-center">
-          <Link to="/projects" className="btn-ghost">
+          <Link to="/projects" className="btn-primary">
             View all projects
           </Link>
         </div>
-      </section>
+      </Band>
 
       <ContactCta />
     </>

@@ -21,7 +21,7 @@ export default function Navbar() {
     }`
 
   return (
-    <header className="sticky top-0 z-50 bg-ink/95 backdrop-blur">
+    <header className="sticky top-0 z-50 bg-ground/95 backdrop-blur">
       <nav className="shell flex items-center justify-between py-4">
         <Link
           to="/"

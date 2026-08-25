@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import SectionHeading from '../components/SectionHeading.jsx'
 import Reveal from '../components/Reveal.jsx'
+import Band from '../components/Band.jsx'
 import Timeline from '../components/Timeline.jsx'
 import ContactCta from '../components/ContactCta.jsx'
 import { experience } from '../data/experience.js'
@@ -18,7 +19,7 @@ function Card({ title, children }) {
     <Reveal className="h-full">
       <div className="card h-full">
         <h2 className="!pt-0 text-xl sm:text-2xl">{title}</h2>
-        <div className="mt-2 h-1 w-12 rounded-full bg-accent" />
+        <div className="mt-2 h-1 w-12 rounded-full bg-steel" />
         <div className="mt-5">{children}</div>
       </div>
     </Reveal>
@@ -44,9 +45,8 @@ export default function About() {
 
   return (
     <>
-      <section className="shell py-16 sm:py-20">
+      <Band tone="paper">
         <SectionHeading
-          light
           title="About"
           subtitle="My background, the direction I'm building toward, and what I've worked on so far."
         />
@@ -75,7 +75,7 @@ export default function About() {
                   key={detail}
                   className="relative pl-5 text-sm text-smoke-dark
                              before:absolute before:left-0 before:top-2 before:h-1.5
-                             before:w-1.5 before:rounded-full before:bg-accent"
+                             before:w-1.5 before:rounded-full before:bg-steel"
                 >
                   {detail}
                 </li>
@@ -90,7 +90,10 @@ export default function About() {
           </Card>
         </div>
 
-        <div className="mt-8">
+      </Band>
+
+      <Band tone="cream">
+        <div>
           <Card title="Skills">
             <div className="grid gap-6 sm:grid-cols-3">
               {skills.map((group) => (
@@ -124,7 +127,7 @@ export default function About() {
                   key={item}
                   className="relative pl-5 text-smoke-dark
                              before:absolute before:left-0 before:top-2.5 before:h-1.5
-                             before:w-1.5 before:rounded-full before:bg-accent"
+                             before:w-1.5 before:rounded-full before:bg-steel"
                 >
                   {item}
                 </li>
@@ -136,7 +139,7 @@ export default function About() {
             </div>
           </Card>
         </div>
-      </section>
+      </Band>
 
       <ContactCta />
     </>

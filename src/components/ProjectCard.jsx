@@ -6,9 +6,9 @@ export default function ProjectCard({ project, compact = false }) {
   return (
     <Link
       to={`/projects/${project.slug}`}
-      className="group flex h-full flex-col overflow-hidden rounded-2xl bg-white
-                 shadow-lg shadow-ink/20 transition duration-300
-                 hover:-translate-y-1 hover:shadow-xl hover:shadow-ink/30"
+      className="group flex h-full flex-col overflow-hidden rounded-2xl border
+                 border-smoke-light bg-white shadow-sm transition duration-300
+                 hover:-translate-y-1 hover:border-steel hover:shadow-lg hover:shadow-ink/15"
     >
       <ProjectVisual
         project={project}

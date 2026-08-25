@@ -8,7 +8,7 @@
   }
 
   body {
-    @apply bg-ground font-body text-ink antialiased;
+    @apply bg-white font-body text-ink antialiased;
     overscroll-behavior: contain;
   }
 
@@ -32,11 +32,11 @@
   }
 
   ::selection {
-    @apply bg-accent text-ink;
+    @apply bg-mist text-ink;
   }
 
   :focus-visible {
-    @apply outline-none ring-2 ring-accent ring-offset-2 ring-offset-ground;
+    @apply outline-none ring-2 ring-ground ring-offset-2 ring-offset-white;
   }
 }
 
@@ -46,7 +46,7 @@
   }
 
   .card {
-    @apply rounded-2xl bg-white p-6 shadow-lg shadow-ink/20 sm:p-8;
+    @apply rounded-2xl border border-smoke-light bg-white p-6 shadow-sm sm:p-8;
   }
 
   .btn {
@@ -56,10 +56,20 @@
   }
 
   .btn-primary {
-    @apply btn bg-accent text-ink hover:bg-mist;
+    @apply btn bg-ground text-white hover:bg-ink;
   }
 
   .btn-ghost {
+    @apply btn border-2 border-ground text-ground hover:bg-ground hover:text-white;
+  }
+
+  /* Buttons sitting on a teal band. Bright teal is unreadable as text on
+     white, but as a fill under near-black text it clears 11.97:1. */
+  .btn-on-dark {
+    @apply btn bg-accent text-ink hover:bg-mist;
+  }
+
+  .btn-on-dark-ghost {
     @apply btn border-2 border-accent text-accent hover:bg-accent hover:text-ink;
   }
 

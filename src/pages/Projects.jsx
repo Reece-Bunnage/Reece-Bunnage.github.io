@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import ProjectCard from '../components/ProjectCard.jsx'
 import SectionHeading from '../components/SectionHeading.jsx'
 import Reveal from '../components/Reveal.jsx'
+import Band from '../components/Band.jsx'
 import ContactCta from '../components/ContactCta.jsx'
 import { mainProjects, otherProjects } from '../data/projects.js'
 
@@ -12,9 +13,8 @@ export default function Projects() {
 
   return (
     <>
-      <section className="shell py-16 sm:py-20">
+      <Band tone="paper">
         <SectionHeading
-          light
           title="Projects"
           subtitle="Automation and systems work from client engagements and BYU, alongside the tools I've built on my own."
         />
@@ -25,11 +25,10 @@ export default function Projects() {
             </Reveal>
           ))}
         </div>
-      </section>
+      </Band>
 
-      <section className="shell pb-8">
+      <Band tone="cream">
         <SectionHeading
-          light
           title="Other Development Projects"
           subtitle="Smaller builds — mostly experiments in how far AI-assisted development goes."
         />
@@ -40,7 +39,7 @@ export default function Projects() {
             </Reveal>
           ))}
         </div>
-      </section>
+      </Band>
 
       <ContactCta />
     </>
