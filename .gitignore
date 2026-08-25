@@ -1,0 +1,8 @@
+node_modules
+dist
+.DS_Store
+*.local
+.vite
+
+# Original resume source (served copy lives in public/)
+REECE BUNNAGE Resume.pdf
