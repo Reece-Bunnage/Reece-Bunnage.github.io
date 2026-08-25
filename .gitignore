@@ -6,3 +6,6 @@ dist
 
 # Original resume source (served copy lives in public/)
 REECE BUNNAGE Resume.pdf
+
+# Loose screenshots dropped in the project root for optimizing
+Screenshot*.png

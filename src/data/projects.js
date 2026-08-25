@@ -147,19 +147,40 @@ export const projects = [
     title: 'Bucketeer',
     context: 'Self-directed — TypeScript',
     summary:
-      'A personal budgeting app you download and run locally, so your transaction history never leaves your machine.',
-    image: null,
+      'A local-first budgeting app with a rules engine that files transactions into buckets automatically, so categorizing a month of spending stops being manual work.',
+    image: '/images/projects/bucketeer-dashboard.jpg',
+    gallery: [
+      {
+        src: '/images/projects/bucketeer-dashboard.jpg',
+        caption:
+          'Dashboard — what is left to spend, and budget vs. actual by bucket with child buckets rolled into parents.',
+      },
+      {
+        src: '/images/projects/bucketeer-bank-sync.jpg',
+        caption:
+          'Accounts & sync — connect a real bank through Plaid or Teller, or stay in CSV-only mode and import nothing live.',
+      },
+      {
+        src: '/images/projects/bucketeer-rules.jpg',
+        caption:
+          'Categorization rules, grouped by the bucket each one files into. When several match, the most specific rule wins.',
+      },
+    ],
     icon: 'chart',
-    tags: ['TypeScript', 'Local-First', 'Personal Finance'],
+    tags: ['TypeScript', 'Rules Engine', 'Local-First', 'Plaid / Teller'],
     body: [
-      'Budgeting apps want your bank credentials. That is the trade almost all of them ask for, and it is the reason a lot of people never start.',
-      'Bucketeer runs locally instead. You download it, run it on your own machine, and feed it transaction history — either a CSV export or your own bank API key. Nothing is hosted, so there is no third party holding your financial data. That constraint drove most of the design decisions in the project.',
+      'Budgeting apps want your bank credentials, and that trade is why a lot of people never start. Bucketeer runs on your own machine instead \u2014 \u201cAll data stays on this computer\u201d is a line in the interface, not a marketing claim. It still connects to real banks through Plaid or Teller, but the access tokens live in the browser\u2019s local database and a local server proxies the requests. Nothing is hosted, so there is no third party holding your financial history. If you would rather connect nothing at all, CSV import covers it.',
+      'The part I care about most is the rules engine, because hand-categorizing transactions is the chore that kills budgeting. A rule reads \u201cdescription contains COSTCO GAS \u2192 Gas,\u201d and it files that transaction every month without being asked again.',
+      'Rules need conflict resolution the moment you have more than a few, so I had to decide what happens when several match one transaction: the most specific rule wins, ties go to the longer keyword, then to the newest rule. Anything unmatched stays Uncategorized rather than getting guessed at \u2014 a wrong bucket is worse than an empty one, because you stop trusting the numbers.',
     ],
     bulletsTitle: 'What this involved:',
     bullets: [
-      'Building a budgeting app in TypeScript that runs locally rather than as a hosted service',
-      'Supporting two ways in: CSV import of transaction history, or linking a bank with your own API key',
-      'Designing around the local-first constraint — no server means no stored credentials',
+      'Building a local-first budgeting app in TypeScript \u2014 no hosted service and no stored credentials',
+      'Connecting real accounts through Plaid or Teller, with CSV import as the no-integration path',
+      'Writing a categorization rules engine that files transactions into buckets automatically',
+      'Defining deterministic precedence for when several rules match the same transaction, and leaving unmatched ones alone',
+      'Rolling child buckets up into parents for budget-vs-actual reporting',
+      'Keeping access tokens in the browser\u2019s local database, proxied by a local server',
     ],
     links: [
       {
@@ -258,32 +279,6 @@ export const projects = [
       {
         label: 'View on GitHub',
         url: 'https://github.com/Reece-Bunnage/sharks-and-minnows',
-      },
-    ],
-  },
-  {
-    slug: 'is-201-website',
-    kind: 'other',
-    featured: false,
-    title: 'IS 201 Website',
-    context: 'BYU coursework',
-    summary: 'Class website project — early coursework in web development.',
-    image: '/images/projects/is-201-website.jpg',
-    icon: 'globe',
-    tags: ['JavaScript', 'HTML', 'CSS'],
-    body: [
-      'A class website project from IS 201. Included here because the course is right that version history is part of the evidence — it shows where the web work started.',
-    ],
-    bulletsTitle: 'What this involved:',
-    bullets: ['Building a website for coursework using JavaScript, HTML, and CSS'],
-    links: [
-      {
-        label: 'View it live',
-        url: 'https://reece-bunnage.github.io/IS-201-WEBSITE/',
-      },
-      {
-        label: 'View on GitHub',
-        url: 'https://github.com/Reece-Bunnage/IS-201-WEBSITE',
       },
     ],
   },

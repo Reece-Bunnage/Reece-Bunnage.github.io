@@ -63,9 +63,8 @@ icon placeholder — but real screenshots are better:
 | `public/images/projects/risk-assessment.jpg` | Captured from the live demo |
 | `public/images/projects/clothing-search.jpg` | Captured from the live demo |
 | `public/images/projects/sharks-and-minnows.jpg` | Captured from the live demo |
-| `public/images/projects/is-201-website.jpg` | Captured from the live demo |
 | `public/images/projects/web-brawler.jpg` | Captured from a local match |
-| Bucketeer | No screenshot — runs as a local workspace app, so it uses the icon fallback |
+| `public/images/projects/bucketeer-{dashboard,bank-sync,rules}.jpg` | Supplied by Reece; shown as a 3-image gallery |
 
 The two client/internal case studies (SOLVD quoting redesign, BYU IT automation)
 intentionally use icon treatments — those systems shouldn't be screenshotted.
