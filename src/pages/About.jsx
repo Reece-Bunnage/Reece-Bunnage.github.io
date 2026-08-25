@@ -66,7 +66,7 @@ export default function About() {
             <p className="font-head text-lg font-bold text-ink">{education.school}</p>
             <p className="mt-1 text-smoke-dark">{education.degree}</p>
             <p className="text-sm italic text-smoke-mid">{education.minors}</p>
-            <p className="mt-2 text-sm font-semibold text-steel-dark">
+            <p className="mt-2 text-sm font-semibold text-smoke-mid">
               {education.location} &middot; {education.graduation}
             </p>
             <ul className="mt-4 space-y-2">

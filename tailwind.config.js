@@ -8,11 +8,7 @@ export default {
         ink: '#041e2e',
         accent: '#05F2DB',
         mist: '#B4ECEB',
-        steel: {
-          DEFAULT: '#6CA4AC',
-          // 5.2:1 on white — the DEFAULT is only 2.8:1 and fails AA there.
-          dark: '#4C7378',
-        },
+        steel: '#6CA4AC',
         smoke: {
           dark: '#141414',
           mid: '#666666',
