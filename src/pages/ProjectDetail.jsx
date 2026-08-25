@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { Link, Navigate, useParams } from 'react-router-dom'
 import ProjectVisual from '../components/ProjectVisual.jsx'
+import Gallery from '../components/Gallery.jsx'
 import TechTags from '../components/TechTags.jsx'
 import Reveal from '../components/Reveal.jsx'
 import ContactCta from '../components/ContactCta.jsx'
@@ -37,10 +38,14 @@ export default function ProjectDetail() {
             <h1 className="mt-2 text-3xl sm:text-4xl">{project.title}</h1>
             <TechTags tags={project.tags} className="mt-5" />
 
-            <ProjectVisual
-              project={project}
-              className="mt-8 h-56 w-full rounded-xl sm:h-80"
-            />
+            {project.gallery ? (
+              <Gallery items={project.gallery} />
+            ) : (
+              <ProjectVisual
+                project={project}
+                className="mt-8 h-56 w-full rounded-xl sm:h-80"
+              />
+            )}
 
             <div className="prose-body mt-8">
               {project.body.map((paragraph) => (

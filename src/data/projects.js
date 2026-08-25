@@ -77,7 +77,17 @@ export const projects = [
     context: 'BYU Department of Physics and Astronomy — Brightspot CMS',
     summary:
       'Built and maintained pages for two live BYU department sites: the Royden G. Derrick Planetarium and the Physics & Astronomy Tech Office.',
-    image: '/images/projects/planetarium.png',
+    image: '/images/projects/planetarium.jpg',
+    gallery: [
+      {
+        src: '/images/projects/planetarium.jpg',
+        caption: 'planetarium.byu.edu — shows, community group bookings, and directions for public visitors.',
+      },
+      {
+        src: '/images/projects/pandait.jpg',
+        caption: 'pandait.byu.edu — IT service documentation and request intake for department faculty, staff, and students.',
+      },
+    ],
     icon: 'globe',
     tags: ['Brightspot CMS', 'Content Strategy', 'Technical Documentation'],
     body: [
