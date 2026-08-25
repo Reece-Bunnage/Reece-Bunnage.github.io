@@ -7,7 +7,7 @@ export const profile = {
   intro: [
     "I'm an Information Systems student at BYU's Marriott School of Business, minoring in Cybersecurity and Computer Science, and an automation consultant at SOLVD.cloud.",
     "Most of what I do comes down to the same pattern: find the step where a team is doing something by hand, understand why it works that way, and rebuild it so the system does it instead. At SOLVD that looks like Salesforce Flows and Revenue Cloud configuration for sales teams. At BYU's Department of Physics and Astronomy it has looked like Active Directory cleanup, a knowledge base that keeps the same question from getting asked twice, and department web content that people can actually find their way through.",
-    "The direction I'm building toward is consulting on AI and automation for business systems — the work of translating between what a team needs and what a system can be made to do.",
+    "The direction I'm building toward is consulting on AI and automation for business systems — the work of translating between what a team needs and what a system can be made to do. I'm applying to BYU's five-year integrated MISM program to keep going in that direction, since its emphasis on leadership and project management is the half of consulting that coursework in development doesn't cover.",
   ],
   email: 'rjbunnage@gmail.com',
   linkedin: 'https://www.linkedin.com/in/reece-bunnage/',
@@ -18,10 +18,19 @@ export const profile = {
 
 export const education = {
   school: 'Brigham Young University — Marriott School of Business',
-  degree: 'Bachelor of Science, Information Systems',
-  minors: 'Minors in Cybersecurity & Computer Science',
   location: 'Provo, UT',
-  graduation: 'Expected April 2028',
+  degrees: [
+    {
+      name: 'Master of Information Systems Management (MISM)',
+      note: 'Applying to the five-year integrated program',
+      dates: 'Expected April 2029',
+    },
+    {
+      name: 'Bachelor of Science, Information Systems',
+      note: 'Minors in Cybersecurity & Computer Science',
+      dates: 'Expected April 2028',
+    },
+  ],
   details: ['GPA 4.00 / 4.00', 'BYU Academic Scholarship'],
 }
 

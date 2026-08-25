@@ -109,7 +109,7 @@ export const projects = [
   {
     slug: 'risk-assessment',
     kind: 'build',
-    featured: true,
+    featured: false,
     title: 'bunnage shield',
     context: 'Self-directed — AI-powered vendor risk assessment',
     summary:
@@ -143,7 +143,7 @@ export const projects = [
   {
     slug: 'bucketeer',
     kind: 'build',
-    featured: false,
+    featured: true,
     title: 'Bucketeer',
     context: 'Self-directed — TypeScript',
     summary:

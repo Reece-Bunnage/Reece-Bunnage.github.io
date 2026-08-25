@@ -64,11 +64,26 @@ export default function About() {
         <div className="mt-8">
           <Card title="Education">
             <p className="font-head text-lg font-bold text-ink">{education.school}</p>
-            <p className="mt-1 text-smoke-dark">{education.degree}</p>
-            <p className="text-sm italic text-smoke-mid">{education.minors}</p>
-            <p className="mt-2 text-sm font-semibold text-smoke-mid">
-              {education.location} &middot; {education.graduation}
+            <p className="mt-1 text-sm font-semibold text-smoke-mid">
+              {education.location}
             </p>
+
+            <ul className="mt-5 space-y-4">
+              {education.degrees.map((degree) => (
+                <li
+                  key={degree.name}
+                  className="border-l-2 border-steel pl-4"
+                >
+                  <div className="flex flex-wrap items-baseline justify-between gap-x-4">
+                    <p className="font-head font-bold text-ground">{degree.name}</p>
+                    <span className="text-sm font-semibold text-smoke-mid">
+                      {degree.dates}
+                    </span>
+                  </div>
+                  <p className="text-sm italic text-smoke-mid">{degree.note}</p>
+                </li>
+              ))}
+            </ul>
             <ul className="mt-4 space-y-2">
               {education.details.map((detail) => (
                 <li

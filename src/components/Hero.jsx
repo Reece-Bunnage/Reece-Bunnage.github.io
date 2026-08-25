@@ -51,14 +51,9 @@ export default function Hero() {
           <Link to="/projects" className="btn-primary">
             See what I&rsquo;ve built
           </Link>
-          <a
-            href={profile.github}
-            target="_blank"
-            rel="noreferrer"
-            className="btn-ghost"
-          >
-            Explore my GitHub
-          </a>
+          <Link to="/about" className="btn-ghost">
+            About me
+          </Link>
         </div>
 
         <SocialLinks className="mt-8" />
