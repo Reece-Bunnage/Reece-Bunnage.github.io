@@ -79,7 +79,7 @@ export default function ProjectVisual({ project, className = '' }) {
       alt={`${project.title} screenshot`}
       loading="lazy"
       onError={() => setFailed(true)}
-      className={`object-cover ${className}`}
+      className={`object-cover object-top ${className}`}
     />
   )
 }

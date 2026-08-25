@@ -55,15 +55,17 @@ Resume content lives in `src/data/profile.js` and `src/data/experience.js`.
 The site renders correctly without these — each falls back to a monogram or
 icon placeholder — but real screenshots are better:
 
-| Path | What it should be |
+| Path | Status |
 | --- | --- |
-| `public/images/portrait.jpg` | Hero photo (square crop; it renders as a circle) |
-| `public/images/projects/planetarium.png` | Screenshot of planetarium.byu.edu |
-| `public/images/projects/risk-assessment.png` | Screenshot of the Risk Assessment app |
-| `public/images/projects/bucketeer.png` | Screenshot of Bucketeer |
-| `public/images/projects/clothing-search.png` | Screenshot of Clothing Search |
-| `public/images/projects/web-brawler.png` | Screenshot of Web Brawler |
-| `public/images/projects/sharks-and-minnows.png` | Screenshot of Sharks and Minnows |
+| `public/images/portrait.jpg` | **Still needed** — hero photo, square crop (renders as a circle) |
+| `public/images/projects/planetarium.jpg` | Captured from the live site |
+| `public/images/projects/pandait.jpg` | Captured from the live site |
+| `public/images/projects/risk-assessment.jpg` | Captured from the live demo |
+| `public/images/projects/clothing-search.jpg` | Captured from the live demo |
+| `public/images/projects/sharks-and-minnows.jpg` | Captured from the live demo |
+| `public/images/projects/is-201-website.jpg` | Captured from the live demo |
+| `public/images/projects/web-brawler.jpg` | Captured from a local match |
+| Bucketeer | No screenshot — runs as a local workspace app, so it uses the icon fallback |
 
 The two client/internal case studies (SOLVD quoting redesign, BYU IT automation)
 intentionally use icon treatments — those systems shouldn't be screenshotted.

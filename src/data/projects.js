@@ -110,24 +110,30 @@ export const projects = [
     slug: 'risk-assessment',
     kind: 'build',
     featured: true,
-    title: 'Risk Assessment',
-    context: 'Self-directed — AI-assisted decision tool',
+    title: 'bunnage shield',
+    context: 'Self-directed — AI-powered vendor risk assessment',
     summary:
-      'A web app that uses AI to run a risk assessment on a piece of software, built for IT departments deciding whether to adopt or integrate it.',
-    image: '/images/projects/risk-assessment.png',
+      'Helps security and compliance teams evaluate third-party vendor risk in minutes instead of weeks: answer 14 questions, get an AI-generated risk report.',
+    image: '/images/projects/risk-assessment.jpg',
     icon: 'shield',
-    tags: ['JavaScript', 'AI', 'IT Governance'],
+    tags: ['React', 'AI', 'Vendor Risk', 'Compliance'],
     body: [
-      'IT departments get asked to approve new software constantly, and the assessment that should happen before saying yes often does not — not because nobody cares, but because doing it properly takes time nobody has.',
-      'This app puts AI in that gap: describe the program, get a structured risk assessment back. It is the intersection of the two things I am building toward — AI as a working tool, and the governance side of business systems.',
+      'Before a company signs with a vendor, someone is supposed to assess the risk. In practice that review is slow enough that it often gets skipped, or reduced to a form nobody reads — which is exactly when a bad integration gets approved.',
+      'bunnage shield compresses that review into 14 questions and returns an AI-generated risk report. It keeps a history of past assessments, so a team can see how a vendor was evaluated and revisit the reasoning later.',
+      'This is the project that sits closest to where I am headed: AI doing the analytical work, applied to a governance decision a business actually has to make.',
     ],
     bulletsTitle: 'What this involved:',
     bullets: [
-      'Designing a web app that performs an AI-driven risk assessment of a program',
-      'Framing the output for the actual decision: should an IT department use or integrate this software',
-      'Building the interface and the prompt structure behind the assessment',
+      'Designing a 14-question assessment that produces enough signal for a useful risk report without becoming another form nobody finishes',
+      'Generating the risk report with AI and structuring the output around the decision being made — sign or do not sign',
+      'Building assessment history so past evaluations stay reviewable',
+      'Shipping it as a React app deployed on GitHub Pages',
     ],
     links: [
+      {
+        label: 'Live demo',
+        url: 'https://reece-bunnage.github.io/Risk-Assessment/',
+      },
       {
         label: 'View on GitHub',
         url: 'https://github.com/Reece-Bunnage/Risk-Assessment',
@@ -137,12 +143,12 @@ export const projects = [
   {
     slug: 'bucketeer',
     kind: 'build',
-    featured: true,
+    featured: false,
     title: 'Bucketeer',
     context: 'Self-directed — TypeScript',
     summary:
       'A personal budgeting app you download and run locally, so your transaction history never leaves your machine.',
-    image: '/images/projects/bucketeer.png',
+    image: null,
     icon: 'chart',
     tags: ['TypeScript', 'Local-First', 'Personal Finance'],
     body: [
@@ -165,25 +171,31 @@ export const projects = [
   {
     slug: 'clothing-search',
     kind: 'build',
-    featured: false,
+    featured: true,
     title: 'Clothing Search',
     context: 'Self-directed — built for a real user',
     summary:
-      'Queries multiple clothing sites at once so my wife can cast a wide net in one search instead of ten tabs.',
-    image: '/images/projects/clothing-search.png',
+      'Searches eight stores at once by size and actual measurements, so my wife can stop opening a tab per retailer.',
+    image: '/images/projects/clothing-search.jpg',
     icon: 'search',
-    tags: ['JavaScript', 'Web Scraping', 'Search'],
+    tags: ['JavaScript', 'Search', 'UX'],
     body: [
-      'My wife shops for a specific item across a handful of sites, one tab at a time. This collapses that into a single query — search once, get options from everywhere at once.',
-      'It is a small tool with exactly one user, which turned out to be the useful part: I got feedback on every decision immediately from the person actually using it.',
+      'My wife shops for one specific item across a handful of stores, one tab at a time. This collapses that into a single search across Amazon, ASOS, Nordstrom, Macy\u2019s, SHEIN, Target, H&M, and Bohme.',
+      'The part that actually matters is measurements. A size 6 is not a size 6 across eight retailers, so filtering on a real number \u2014 minimum length in inches \u2014 does more work than filtering on a label. That insight came from the person using it, not from me.',
+      'One user, one real problem, feedback on every decision within a day. It stayed small on purpose.',
     ],
     bulletsTitle: 'What this involved:',
     bullets: [
-      'Building a site that queries multiple clothing retailers for a given item',
-      'Aggregating results into a single view so a wide net can be cast quickly',
-      'Iterating directly on feedback from the person using it',
+      'Building a single search that queries eight clothing retailers at once',
+      'Filtering by type, size, color, minimum length in inches, and free-text keywords',
+      'Letting the shopper choose which stores to include in a given search',
+      'Iterating directly with the person using it',
     ],
     links: [
+      {
+        label: 'Live demo',
+        url: 'https://reece-bunnage.github.io/clothing-search/',
+      },
       {
         label: 'View on GitHub',
         url: 'https://github.com/Reece-Bunnage/clothing-search',
@@ -198,7 +210,7 @@ export const projects = [
     context: 'Self-directed — built with Claude Code',
     summary:
       'A multiplayer browser game over WebSockets with a local server — a deliberate test of how far AI-assisted development goes on something real-time.',
-    image: '/images/projects/web-brawler.png',
+    image: '/images/projects/web-brawler.jpg',
     icon: 'game',
     tags: ['JavaScript', 'WebSockets', 'AI-Assisted Development'],
     body: [
@@ -226,7 +238,7 @@ export const projects = [
     context: 'Self-directed — built with Claude Code',
     summary:
       'A browser arcade game: swim across the pool without getting caught. Built to test what AI-assisted development handles well.',
-    image: '/images/projects/sharks-and-minnows.png',
+    image: '/images/projects/sharks-and-minnows.jpg',
     icon: 'game',
     tags: ['JavaScript', 'Game Development', 'AI-Assisted Development'],
     body: [
@@ -240,6 +252,10 @@ export const projects = [
     ],
     links: [
       {
+        label: 'Play it',
+        url: 'https://reece-bunnage.github.io/sharks-and-minnows/',
+      },
+      {
         label: 'View on GitHub',
         url: 'https://github.com/Reece-Bunnage/sharks-and-minnows',
       },
@@ -252,7 +268,7 @@ export const projects = [
     title: 'IS 201 Website',
     context: 'BYU coursework',
     summary: 'Class website project — early coursework in web development.',
-    image: null,
+    image: '/images/projects/is-201-website.jpg',
     icon: 'globe',
     tags: ['JavaScript', 'HTML', 'CSS'],
     body: [
@@ -261,6 +277,10 @@ export const projects = [
     bulletsTitle: 'What this involved:',
     bullets: ['Building a website for coursework using JavaScript, HTML, and CSS'],
     links: [
+      {
+        label: 'View it live',
+        url: 'https://reece-bunnage.github.io/IS-201-WEBSITE/',
+      },
       {
         label: 'View on GitHub',
         url: 'https://github.com/Reece-Bunnage/IS-201-WEBSITE',
