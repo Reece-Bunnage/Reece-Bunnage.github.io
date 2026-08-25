@@ -14,7 +14,7 @@ export default function Timeline({ items }) {
             />
             <div className="flex flex-wrap items-baseline justify-between gap-x-4">
               <h3 className="!pt-0 text-lg sm:text-xl">{item.title}</h3>
-              <span className="font-head text-sm font-bold text-steel">
+              <span className="font-head text-sm font-bold text-steel-dark">
                 {item.dates}
               </span>
             </div>

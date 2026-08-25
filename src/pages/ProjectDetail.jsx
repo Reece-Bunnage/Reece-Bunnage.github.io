@@ -31,7 +31,7 @@ export default function ProjectDetail() {
 
         <Reveal className="mt-6">
           <div className="card">
-            <p className="text-xs font-semibold uppercase tracking-wide text-steel">
+            <p className="text-xs font-semibold uppercase tracking-wide text-steel-dark">
               {project.context}
             </p>
             <h1 className="mt-2 text-3xl sm:text-4xl">{project.title}</h1>

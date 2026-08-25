@@ -15,7 +15,7 @@ export default function ProjectCard({ project, compact = false }) {
         className={compact ? 'h-32 w-full' : 'h-44 w-full'}
       />
       <div className="flex flex-1 flex-col p-6">
-        <p className="text-xs font-semibold uppercase tracking-wide text-steel">
+        <p className="text-xs font-semibold uppercase tracking-wide text-steel-dark">
           {project.context}
         </p>
         <h3 className="mt-1 !pt-0 text-lg transition group-hover:text-ink sm:text-xl">
