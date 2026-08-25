@@ -70,6 +70,20 @@ icon placeholder — but real screenshots are better:
 The two client/internal case studies (SOLVD quoting redesign, BYU IT automation)
 intentionally use icon treatments — those systems shouldn't be screenshotted.
 
+## Adding images
+
+Drop files in `public/images/` (portrait) or `public/images/projects/`
+(screenshots), then:
+
+```bash
+npm run optimize-images   # 4MB Retina screenshot -> ~300KB, skips small files
+npm run build
+git add -A && git commit -m "Add screenshots" && git push
+```
+
+If the optimizer changes a file's extension (`.png` -> `.jpg`), update that
+project's `image` path in `src/data/projects.js`.
+
 ## Deployment
 
 Pushing to `main` triggers `.github/workflows/deploy.yml`, which builds and
