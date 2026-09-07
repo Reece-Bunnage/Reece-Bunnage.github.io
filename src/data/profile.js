@@ -6,7 +6,7 @@ export const profile = {
     'I build automation and business systems that take manual work off of the people who do the work — and I sit with those people to figure out what to automate in the first place.',
   intro: [
     "I'm an Information Systems student at BYU's Marriott School of Business, minoring in Cybersecurity and Computer Science, and an automation consultant at SOLVD.cloud.",
-    "Most of what I do comes down to the same pattern: find the step where a team is doing something by hand, understand why it works that way, and rebuild it so the system does it instead. At SOLVD that looks like Salesforce Flows and Revenue Cloud configuration for sales teams. At BYU's Department of Physics and Astronomy it has looked like Active Directory cleanup, a knowledge base that keeps the same question from getting asked twice, and department web content that people can actually find their way through.",
+    "Most of what I do comes down to the same pattern: find the step where a team is doing something by hand, understand why it works that way, and rebuild it so the system does it instead. At SOLVD that looks like requirements, solution design, and QA on a Salesforce CPQ implementation for an enterprise client. At BYU's Department of Physics and Astronomy it has looked like Active Directory cleanup, a knowledge base that keeps the same question from getting asked twice, and department web content that people can actually find their way through.",
     "The direction I'm building toward is consulting on AI and automation for business systems — the work of translating between what a team needs and what a system can be made to do. I'm applying to BYU's five-year integrated MISM program to keep going in that direction, since its emphasis on leadership and project management is the half of consulting that coursework in development doesn't cover.",
   ],
   email: 'rjbunnage@gmail.com',
@@ -39,9 +39,11 @@ export const skills = [
     group: 'Automation & Business Systems',
     items: [
       'Salesforce Administration',
-      'Flows',
+      'Salesforce CPQ',
+      'Solution Design',
       'Validation Rules',
-      'Revenue Cloud / CPQ',
+      'Flows',
+      'UAT / QA',
       'Process Design',
       'VBA',
     ],

@@ -43,6 +43,40 @@ const GLYPHS = {
       <path d="M20 28v8M16 32h8M40 30h.01M46 36h.01" />
     </>
   ),
+  // A rule list where one row has been unlatched — the per-rule bypass.
+  rules: (
+    <>
+      <path d="M12 18h28M12 32h28M12 46h16" />
+      <circle cx="48" cy="46" r="7" />
+      <path d="M48 39v-4a5 5 0 019-3" />
+    </>
+  ),
+  ai: (
+    <>
+      <path d="M32 10v14M32 40v14M14 32h14M36 32h14" />
+      <path d="M22 22l8 8M42 42l-8-8M42 22l-8 8M22 42l8-8" />
+      <circle cx="32" cy="32" r="4" />
+    </>
+  ),
+}
+
+// The same glyph set drawn inline for use on a light surface — no dark plate,
+// no fixed size. Used for the per-section badges on a multi-section case study.
+export function Glyph({ icon, className = '' }) {
+  return (
+    <svg
+      viewBox="0 0 64 64"
+      className={className}
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      {GLYPHS[icon] || GLYPHS.globe}
+    </svg>
+  )
 }
 
 function Placeholder({ icon, className }) {

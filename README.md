@@ -37,14 +37,42 @@ To add a project, append one object to the `projects` array in
   context: 'Where this came from',
   summary: 'One sentence for the card.',
   image: '/images/projects/name.png',   // or null for the icon placeholder
-  icon: 'chart',                 // flow | shield | globe | chart | search | game
+  icon: 'chart',                 // flow | shield | globe | chart | search | game | rules | ai
   tags: ['Tech', 'Tech'],
+  meta: 'Optional line under the title, e.g. dates.',
   body: ['Paragraph.', 'Paragraph.'],
   bulletsTitle: 'What this involved:',
   bullets: ['...'],
   outcome: 'Optional highlighted result.',
   note: 'Optional caveat, e.g. client systems not shown.',
   links: [{ label: 'View on GitHub', url: 'https://...' }],
+}
+```
+
+### One card, several projects
+
+A single engagement that covers more than one project uses an optional
+`sections` array instead of top-level `bullets`. The card in the grid stays one
+card; the detail page renders a jump nav plus one block per section. `/projects/solvd`
+is the example.
+
+```js
+{
+  slug: 'solvd',
+  // ...card fields as above, plus `body` for the shared intro. Omit `bullets`.
+  sections: [
+    {
+      id: 'quoting-release',       // anchor target for the jump nav
+      icon: 'flow',                // same glyph set, drawn small on a light badge
+      title: 'Project name',
+      tags: ['Tech', 'Tech'],
+      summary: 'The scannable paragraph, set as a lead.',
+      body: ['Paragraph.'],
+      bulletsTitle: 'What this involved:',
+      bullets: ['...'],
+      takeaway: { label: "The call I'd defend", text: 'Why it was built this way.' },
+    },
+  ],
 }
 ```
 
@@ -66,7 +94,7 @@ icon placeholder — but real screenshots are better:
 | `public/images/projects/web-brawler.jpg` | Captured from a local match |
 | `public/images/projects/bucketeer-{dashboard,bank-sync,rules}.jpg` | Supplied by Reece; shown as a 3-image gallery |
 
-The two client/internal case studies (SOLVD quoting redesign, BYU IT automation)
+The two client/internal case studies (SOLVD CPQ engagement, BYU IT automation)
 intentionally use icon treatments — those systems shouldn't be screenshotted.
 
 ## Adding images

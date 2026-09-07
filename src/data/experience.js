@@ -7,9 +7,10 @@ export const experience = [
     dates: 'Sep 2025 — Present',
     current: true,
     bullets: [
-      'Built Salesforce automations with Flows and validation rules, reducing manual workload and lowering data-entry errors for sales teams',
-      'Configured Revenue Cloud (CPQ) to streamline quoting and pricing, measurably improving sales team speed and deal execution up to 25%',
-      'Partnered with client stakeholders and an offshore team to redesign a quoting workflow in Salesforce, cutting user errors and reducing quote creation time for a sales team of 20 users',
+      'Drafted the technical design an offshore development team built from on an enterprise Salesforce CPQ release — three user stories and thirty-seven subtasks trace back to it',
+      'Owned QA for the release: authored the UAT test plan, ran the client acceptance session, and triaged eight post-UAT defects to pass/fail verdicts before approving the production deployment across 29 quote templates',
+      'Designed a per-rule bypass framework for CPQ product rules so approved exceptions could be cleared one rule at a time rather than through a global admin override',
+      'Used Claude against meeting transcripts to extract requirement changes into build-ready specs, reviewing and correcting every output before it reached a developer',
     ],
   },
   {

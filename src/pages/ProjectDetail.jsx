@@ -1,11 +1,86 @@
 import { useEffect } from 'react'
 import { Link, Navigate, useParams } from 'react-router-dom'
-import ProjectVisual from '../components/ProjectVisual.jsx'
+import ProjectVisual, { Glyph } from '../components/ProjectVisual.jsx'
 import Gallery from '../components/Gallery.jsx'
 import TechTags from '../components/TechTags.jsx'
 import Reveal from '../components/Reveal.jsx'
 import ContactCta from '../components/ContactCta.jsx'
 import { getProject, projects } from '../data/projects.js'
+
+function Bullets({ items }) {
+  return (
+    <ul className="mt-4 space-y-3">
+      {items.map((bullet) => (
+        <li
+          key={bullet}
+          className="relative pl-6 leading-relaxed text-smoke-dark
+                     before:absolute before:left-0 before:top-2.5 before:h-2
+                     before:w-2 before:rounded-full before:bg-steel"
+        >
+          {bullet}
+        </li>
+      ))}
+    </ul>
+  )
+}
+
+// The highlighted closing statement — an `outcome` string, or a `takeaway`
+// whose label names the kind of call being made ("The call I'd defend").
+function Callout({ label, children }) {
+  return (
+    <p
+      className="mt-8 rounded-xl border-l-4 border-ground bg-mist/25 p-5
+                 font-head font-bold text-ground"
+    >
+      {label && <span className="text-ink">{label}: </span>}
+      {children}
+    </p>
+  )
+}
+
+// One project inside a multi-project engagement. Same shape as a standalone
+// project page, minus the visual — the glyph badge carries that job here.
+function ProjectSection({ section, index }) {
+  return (
+    <Reveal delay={index * 0.06} className="mt-8">
+      <section id={section.id} className="card scroll-mt-24">
+        <div className="flex items-start gap-4">
+          <span
+            className="hidden shrink-0 rounded-xl bg-mist/50 p-2.5 text-ground sm:block"
+            aria-hidden="true"
+          >
+            <Glyph icon={section.icon} className="h-7 w-7" />
+          </span>
+          <div>
+            <p className="font-head text-sm font-bold text-steel">
+              {String(index + 1).padStart(2, '0')}
+            </p>
+            <h2 className="!pt-0 mt-1 text-2xl sm:text-3xl">{section.title}</h2>
+          </div>
+        </div>
+
+        <TechTags tags={section.tags} className="mt-5" />
+
+        <p className="mt-6 border-l-2 border-steel pl-4 text-lg leading-relaxed text-ink">
+          {section.summary}
+        </p>
+
+        <div className="prose-body mt-6">
+          {section.body.map((paragraph) => (
+            <p key={paragraph.slice(0, 40)}>{paragraph}</p>
+          ))}
+        </div>
+
+        <h3 className="mt-8 !pt-0 text-lg sm:text-xl">{section.bulletsTitle}</h3>
+        <Bullets items={section.bullets} />
+
+        {section.takeaway && (
+          <Callout label={section.takeaway.label}>{section.takeaway.text}</Callout>
+        )}
+      </section>
+    </Reveal>
+  )
+}
 
 export default function ProjectDetail() {
   const { slug } = useParams()
@@ -19,6 +94,7 @@ export default function ProjectDetail() {
 
   const index = projects.findIndex((p) => p.slug === slug)
   const next = projects[(index + 1) % projects.length]
+  const sections = project.sections ?? []
 
   return (
     <>
@@ -36,6 +112,11 @@ export default function ProjectDetail() {
               {project.context}
             </p>
             <h1 className="mt-2 text-3xl sm:text-4xl">{project.title}</h1>
+            {project.meta && (
+              <p className="mt-2 text-sm font-semibold text-smoke-mid">
+                {project.meta}
+              </p>
+            )}
             <TechTags tags={project.tags} className="mt-5" />
 
             {project.gallery ? (
@@ -53,26 +134,14 @@ export default function ProjectDetail() {
               ))}
             </div>
 
-            <h2 className="mt-8 text-xl sm:text-2xl">{project.bulletsTitle}</h2>
-            <ul className="mt-4 space-y-3">
-              {project.bullets.map((bullet) => (
-                <li
-                  key={bullet}
-                  className="relative pl-6 leading-relaxed text-smoke-dark
-                             before:absolute before:left-0 before:top-2.5 before:h-2
-                             before:w-2 before:rounded-full before:bg-steel"
-                >
-                  {bullet}
-                </li>
-              ))}
-            </ul>
-
-            {project.outcome && (
-              <p className="mt-8 rounded-xl border-l-4 border-ground bg-mist/25 p-5
-                            font-head font-bold text-ground">
-                {project.outcome}
-              </p>
+            {project.bullets?.length > 0 && (
+              <>
+                <h2 className="mt-8 text-xl sm:text-2xl">{project.bulletsTitle}</h2>
+                <Bullets items={project.bullets} />
+              </>
             )}
+
+            {project.outcome && <Callout>{project.outcome}</Callout>}
 
             {project.links.length > 0 && (
               <div className="mt-8 flex flex-wrap gap-4">
@@ -94,8 +163,35 @@ export default function ProjectDetail() {
             {project.note && (
               <p className="mt-6 text-sm italic text-smoke-mid">{project.note}</p>
             )}
+
+            {sections.length > 0 && (
+              <nav aria-label="Projects on this page" className="mt-8 border-t border-smoke-light pt-6">
+                <p className="text-xs font-semibold uppercase tracking-wide text-smoke-mid">
+                  On this page
+                </p>
+                <ol className="mt-3 space-y-2">
+                  {sections.map((section, i) => (
+                    <li key={section.id}>
+                      <a
+                        href={`#${section.id}`}
+                        className="font-head text-sm font-bold text-ground hover:text-ink"
+                      >
+                        <span className="text-steel">
+                          {String(i + 1).padStart(2, '0')}.{' '}
+                        </span>
+                        {section.title}
+                      </a>
+                    </li>
+                  ))}
+                </ol>
+              </nav>
+            )}
           </div>
         </Reveal>
+
+        {sections.map((section, i) => (
+          <ProjectSection key={section.id} section={section} index={i} />
+        ))}
 
         <div className="mt-8 text-right">
           <Link

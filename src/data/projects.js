@@ -7,35 +7,121 @@
 
 export const projects = [
   {
-    slug: 'salesforce-quoting-redesign',
+    slug: 'solvd',
     kind: 'case-study',
     featured: true,
-    title: 'Salesforce Quoting Workflow Redesign',
+    title: 'Salesforce CPQ — Client Engagement',
     context: 'SOLVD.cloud — Automation Consultant',
+    meta: 'Sep 2025 – Present · AI & Salesforce consulting',
     summary:
-      'Rebuilt how a 20-user sales team creates quotes, working with client stakeholders and an offshore team.',
+      'Requirements, solution design, QA, and release delivery on an enterprise CPQ implementation, alongside an offshore development team.',
     image: null,
     icon: 'flow',
     tags: [
-      'Salesforce',
-      'Revenue Cloud / CPQ',
-      'Flows',
-      'Validation Rules',
+      'Salesforce CPQ',
+      'Solution Design',
+      'Requirements Gathering',
+      'UAT',
+      'Release Management',
       'Stakeholder Management',
+      'Claude',
     ],
     body: [
-      'A sales team of 20 was building quotes through a workflow that took longer than it needed to and left room for mistakes at every step. The fix was not a single automation — it was understanding where the manual steps actually were, then deciding which ones the system should own.',
+      'I work on the Salesforce CPQ implementation for an enterprise software client — requirements, solution design, QA, and release delivery alongside an offshore development team. Client and product names withheld.',
     ],
-    bulletsTitle: 'What this involved:',
-    bullets: [
-      'Partnering with client stakeholders to map the existing quoting workflow and find where errors were being introduced',
-      'Coordinating the redesign with an offshore development team',
-      'Configuring Revenue Cloud (CPQ) to streamline quoting and pricing',
-      'Building Salesforce automations with Flows and validation rules to reduce manual workload and lower data-entry errors',
-      'Cutting user errors and reducing quote creation time for the 20-user sales team',
+    sections: [
+      {
+        id: 'quoting-release',
+        icon: 'flow',
+        title: 'Enterprise Quoting Release — Requirements & QA Ownership',
+        tags: [
+          'Salesforce CPQ',
+          'Requirements Gathering',
+          'Solution Design',
+          'UAT',
+          'Release Management',
+          'Stakeholder Management',
+        ],
+        summary:
+          'An enterprise software client needed a new AI product line to be quotable on its own rather than bolted onto an existing product. Eleven weeks, three user stories, thirty-seven subtasks, and a production deployment across 29 quote templates.',
+        body: [
+          'The client’s sales team could only quote the new product line on top of an existing platform product. A customer who wanted just the new line couldn’t be quoted at all. Removing that dependency wasn’t one change — it touched product configuration, pricing, quote documents, approval rules, and a downstream billing integration. The hard part wasn’t building anything. It was working out what the system needed to stop requiring, and proving that loosening those requirements wouldn’t let a bad quote through.',
+        ],
+        bulletsTitle: 'What this involved:',
+        bullets: [
+          'Drafting the technical design the development team built from, assembled from stakeholder calls, mid-project requirement changes, and direct investigation of the production org',
+          'Resolving seven blocking technical questions from the offshore development team so implementation could move',
+          'Reverse-engineering an existing calculation pattern in the org so a new one could be modeled on it rather than invented',
+          'Authoring the UAT test plan and running the client acceptance session',
+          'Triaging eight post-UAT defects with pass/fail verdicts, and reproducing two on video so developers could fix them from a repro rather than a description',
+          'Catching two products that had been built after being descoped, and getting them removed before release',
+          'Approving the production deployment across 29 quote templates',
+        ],
+        takeaway: {
+          label: 'The call I’d defend',
+          text: 'The requirement everyone wanted to remove was also a safety net. I pushed for a quote-level validation rule as a backstop so that even with the prerequisites relaxed, the new products couldn’t land on an account that wasn’t entitled to them. Slightly more to maintain, and it means the loosening can’t be exploited by accident.',
+        },
+      },
+      {
+        id: 'rule-bypass',
+        icon: 'rules',
+        title: 'Product Rule Bypass Framework',
+        tags: [
+          'Salesforce CPQ',
+          'Solution Design',
+          'Validation Rules',
+          'Least-Privilege Access',
+          'QA',
+          'Client UAT',
+        ],
+        summary:
+          'Approved exceptions were deadlocking quotes — a validation rule would block the save even after the business had signed off on the exception. The fix had to unblock the rule without unblocking everyone.',
+        body: [
+          'In Salesforce CPQ, a rule that requires Product B whenever Product A is on the quote is doing exactly its job — right up until someone approves an exception. Then the quote can’t be saved at all, and the rule that was protecting data integrity is just in the way. The obvious fix is a global admin override, which would have worked and would have been a bad idea: one switch that turns off every guardrail at once, available to whoever holds it.',
+        ],
+        bulletsTitle: 'What this involved:',
+        bullets: [
+          'Designing a per-rule bypass — a multi-select picklist where each value disarms exactly one named rule, so clearing one blocker never silently clears another',
+          'Diagnosing that error conditions couldn’t evaluate the multi-select field directly, and specifying a formula field that flattens the selected values into text the conditions can parse',
+          'Specifying four summary variables and four error conditions, and writing the deployment plan',
+          'Authoring the test script — naming the specific product cohorts and quote records to test against and to exclude — then executing it across all four rules in multiple quote scenarios',
+          'Verifying least-privilege access by logging in as the client’s actual sales-operations user to confirm the field was invisible to every other profile',
+          'Finding an adjacent validation rule the spec had missed that still blocked the save, and escalating it before release',
+        ],
+        takeaway: {
+          label: 'The call I’d defend',
+          text: 'One picklist value per rule instead of a single global bypass. It’s more configuration to maintain and more for a user to understand, and it buys something worth the cost — an override can never do more than the person who requested it intended.',
+        },
+      },
+      {
+        id: 'ai-design-drafting',
+        icon: 'ai',
+        title: 'AI-Assisted Design Drafting',
+        tags: [
+          'Claude',
+          'Prompt Engineering',
+          'Requirements Analysis',
+          'Meeting Transcripts',
+          'Salesforce CPQ',
+        ],
+        summary:
+          'Requirements arrived as hour-long calls; developers needed build-ready specs. I built a workflow that converts one into the other and keeps the judgment calls human.',
+        body: [
+          'On a fast-moving release, decisions get made on a call and then revised on the next one. Reading back through transcripts to work out what’s still true is slow — and it’s the kind of slow that makes a whole project late, because developers sit blocked while someone reconstructs the current state of the requirements. I used Claude against the meeting transcripts to extract what had actually changed, then wrote the design myself from that.',
+        ],
+        bulletsTitle: 'What this involved:',
+        bullets: [
+          'Running call transcripts through Claude to pull out changed decisions and requirement deltas instead of re-reading them by hand',
+          'Drafting the technical design the development team built from — three user stories and thirty-seven subtasks trace back to it',
+          'Using Claude to research specific integration questions the team was blocked on, then delivering the findings as a document developers could act on directly',
+          'Reviewing and correcting AI output before it reached anyone else, and treating peer review of my own draft as part of the process — two of my field-design decisions were corrected in review, which is what review is for',
+        ],
+        takeaway: {
+          label: 'The distinction that matters',
+          text: 'AI drafted, I decided. Nothing it produced reached a developer without going through me, and I own what shipped. I hold Anthropic’s Claude Certified Architect credential, and the reason I think that’s worth something is not that it means I can prompt well — it’s that using these tools on real client work requires knowing where their output stops being trustworthy.',
+        },
+      },
     ],
-    outcome:
-      'Measurably improved sales team speed and deal execution by up to 25%.',
     note: 'Client systems are not shown. This write-up describes scope and approach only.',
     links: [],
   },
