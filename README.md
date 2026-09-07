@@ -38,6 +38,9 @@ To add a project, append one object to the `projects` array in
   summary: 'One sentence for the card.',
   image: '/images/projects/name.png',   // or null for the icon placeholder
   icon: 'chart',                 // flow | shield | globe | chart | search | game | rules | ai
+  logo: { src: '/images/x.png', alt: 'X' },  // optional; overrides image/icon.
+                                 // Renders centred on a cream plate instead of
+                                 // cropped to fill — use for a brand mark.
   tags: ['Tech', 'Tech'],
   meta: 'Optional line under the title, e.g. dates.',
   body: ['Paragraph.', 'Paragraph.'],
@@ -85,7 +88,8 @@ icon placeholder — but real screenshots are better:
 
 | Path | Status |
 | --- | --- |
-| `public/images/portrait.jpg` | **Still needed** — hero photo, square crop (renders as a circle) |
+| `public/images/portrait.jpg` | Supplied by Reece; the hero crops it square from the top |
+| `public/images/solvd-logo.png` | SOLVD.cloud wordmark, from solvd.cloud; shown on a cream plate |
 | `public/images/projects/planetarium.jpg` | Captured from the live site |
 | `public/images/projects/pandait.jpg` | Captured from the live site |
 | `public/images/projects/risk-assessment.jpg` | Captured from the live demo |
@@ -94,8 +98,9 @@ icon placeholder — but real screenshots are better:
 | `public/images/projects/web-brawler.jpg` | Captured from a local match |
 | `public/images/projects/bucketeer-{dashboard,bank-sync,rules}.jpg` | Supplied by Reece; shown as a 3-image gallery |
 
-The two client/internal case studies (SOLVD CPQ engagement, BYU IT automation)
-intentionally use icon treatments — those systems shouldn't be screenshotted.
+The two client/internal case studies shouldn't be screenshotted: the BYU IT
+automation entry uses an icon treatment, and the SOLVD engagement shows the
+employer's wordmark instead.
 
 ## Adding images
 

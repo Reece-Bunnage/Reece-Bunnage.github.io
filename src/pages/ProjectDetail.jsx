@@ -124,7 +124,10 @@ export default function ProjectDetail() {
             ) : (
               <ProjectVisual
                 project={project}
-                className="mt-8 h-56 w-full rounded-xl sm:h-80"
+                className={`mt-8 w-full rounded-xl ${
+                  // A logo needs far less room than a screenshot does.
+                  project.logo ? 'h-40 sm:h-48' : 'h-56 sm:h-80'
+                }`}
               />
             )}
 

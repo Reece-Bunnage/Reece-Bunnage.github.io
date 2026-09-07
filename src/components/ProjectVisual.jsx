@@ -100,8 +100,32 @@ function Placeholder({ icon, className }) {
   )
 }
 
+// A brand logo is artwork, not a screenshot: it needs breathing room and its own
+// background rather than being cropped to fill. Cream keeps it off the white card.
+function LogoPlate({ logo, className }) {
+  return (
+    <div
+      className={`flex items-center justify-center border-b border-smoke-light
+                  bg-cream p-6 sm:p-8 ${className}`}
+    >
+      {/* Capped: the source is 800px wide, and letting it fill a full-width
+          detail-page plate blows the wordmark up past its usable size. */}
+      <img
+        src={logo.src}
+        alt={logo.alt}
+        loading="lazy"
+        className="max-h-full w-full max-w-[420px] object-contain"
+      />
+    </div>
+  )
+}
+
 export default function ProjectVisual({ project, className = '' }) {
   const [failed, setFailed] = useState(false)
+
+  if (project.logo) {
+    return <LogoPlate logo={project.logo} className={className} />
+  }
 
   if (!project.image || failed) {
     return <Placeholder icon={project.icon} className={className} />

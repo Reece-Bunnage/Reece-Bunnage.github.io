@@ -17,6 +17,10 @@ export const projects = [
       'Requirements, solution design, QA, and release delivery on an enterprise CPQ implementation, alongside an offshore development team.',
     image: null,
     icon: 'flow',
+    logo: {
+      src: '/images/solvd-logo.png',
+      alt: 'SOLVD.cloud',
+    },
     tags: [
       'Salesforce CPQ',
       'Solution Design',

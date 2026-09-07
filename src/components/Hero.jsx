@@ -8,7 +8,9 @@ function Portrait() {
   const [failed, setFailed] = useState(false)
 
   const frame =
-    'h-64 w-64 rounded-2xl object-cover shadow-xl shadow-ink/25 sm:h-80 sm:w-80'
+    // object-top: the source is a 2:3 headshot, so a centred square crop would
+    // cut the top of the head off.
+    'h-64 w-64 rounded-2xl object-cover object-top shadow-xl shadow-ink/25 sm:h-80 sm:w-80'
 
   if (failed) {
     return (
