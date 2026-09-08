@@ -1,14 +1,17 @@
 # reece-bunnage.github.io
 
-Personal portfolio for Reece Bunnage — Information Systems at BYU, automation
-consultant at SOLVD.cloud. Live at **https://reece-bunnage.github.io**.
+Personal portfolio for Reece Bunnage — Information Systems at BYU (minors in
+Cybersecurity and Computer Science), automation consultant at SOLVD.cloud,
+building toward cybersecurity consulting. Live at
+**https://reece-bunnage.github.io**.
 
 ## Stack
 
 React 18 · Vite 5 · React Router 6 · Tailwind CSS 3 · framer-motion
 
-Structurally modeled on [koleton.dev](https://koleton.dev) — same three-route
-layout, same Ubuntu/Source Sans 3 type pairing. Deliberately built without
+Structurally modeled on [koleton.dev](https://koleton.dev) — same Ubuntu/Source
+Sans 3 type pairing. Four routes: `/`, `/about`, `/projects` (plus
+`/projects/:slug`), and `/credentials`. Deliberately built without
 Material Tailwind or MUI, which is most of why the production bundle is ~312 KB
 instead of ~1.5 MB.
 
@@ -79,7 +82,58 @@ is the example.
 }
 ```
 
-Resume content lives in `src/data/profile.js` and `src/data/experience.js`.
+## Adding a page
+
+`src/pages/Foo.jsx`, a `<Route>` in `src/App.jsx`, and one entry in the `LINKS`
+array in `src/components/Navbar.jsx` — that array drives both the desktop nav and
+the mobile drawer. Two things are *not* driven by it and need editing by hand:
+
+- `src/pages/NotFound.jsx` names the tabs in prose.
+- The `Resume` pill is hardcoded beside the array in both nav blocks.
+
+## Resume content
+
+Lives in `src/data/profile.js` and `src/data/experience.js`.
+
+`public/Reece-Bunnage-Resume.pdf` is the served resume — currently the
+cyber-focused version, and the only one. Every link to it comes from
+`profile.resume`, so replacing the resume is a file overwrite and nothing else.
+Serving *two* resumes (e.g. a security track and an automation track) would mean
+turning `profile.resume` into a list and updating its three consumers:
+`Navbar.jsx` (desktop pill and mobile drawer) and the `LINKS` array in
+`SocialLinks.jsx`.
+
+### Certifications and coursework
+
+`/credentials` renders three arrays from `src/data/profile.js`. Anything not yet
+earned carries its own status rather than being left off:
+
+```js
+export const certifications = [
+  {
+    name: 'CompTIA Security+',
+    issuer: 'CompTIA',
+    status: 'In progress',        // 'Earned' -> solid tag; anything else -> outline
+    date: 'Target November 2026', // or just the year, once earned
+    what: 'One sentence on what it actually validates.',
+  },
+]
+
+export const coursework = [
+  { code: 'ACC 551', name: 'Course name', note: 'Graduate MAcc course', what: 'Optional.' },
+]
+
+export const communities = [
+  { name: 'BYU Collegiate Cyber Defense Competition', note: 'Applicant' },
+]
+```
+
+`communities` deliberately overlaps `involvement` (rendered on About): the same
+clubs read as general involvement there and as security signal on `/credentials`.
+Keep `note` honest — "Applicant" is not "Competitor".
+
+The `skills` array is rendered `sm:grid-cols-2 lg:grid-cols-4` on About, so it
+wants four groups. Adding a fifth reflows it.
 
 ## Images to add
 

@@ -58,6 +58,21 @@ const GLYPHS = {
       <circle cx="32" cy="32" r="4" />
     </>
   ),
+  // A certification seal — ribboned medal. Used on /credentials.
+  badge: (
+    <>
+      <circle cx="32" cy="24" r="14" />
+      <path d="M27 24l4 4 8-8" />
+      <path d="M23 36l-4 18 13-7 13 7-4-18" />
+    </>
+  ),
+  // An open book, for coursework.
+  book: (
+    <>
+      <path d="M32 18v32" />
+      <path d="M32 18c-5-4-12-5-20-4v30c8-1 15 0 20 4 5-4 12-5 20-4V14c-8-1-15 0-20 4z" />
+    </>
+  ),
 }
 
 // The same glyph set drawn inline for use on a light surface — no dark plate,

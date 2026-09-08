@@ -6,6 +6,7 @@ const LINKS = [
   { to: '/', label: 'Home' },
   { to: '/about', label: 'About' },
   { to: '/projects', label: 'Projects' },
+  { to: '/credentials', label: 'Credentials' },
 ]
 
 export default function Navbar() {
@@ -31,7 +32,7 @@ export default function Navbar() {
           Reece <span className="text-accent">Bunnage</span>
         </Link>
 
-        <div className="hidden items-center gap-8 md:flex">
+        <div className="hidden items-center gap-6 md:flex lg:gap-8">
           {LINKS.map((link) => (
             <NavLink key={link.to} to={link.to} className={linkClass} end>
               {link.label}

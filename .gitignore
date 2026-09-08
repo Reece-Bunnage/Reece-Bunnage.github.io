@@ -4,8 +4,11 @@ dist
 *.local
 .vite
 
-# Original resume source (served copy lives in public/)
-REECE BUNNAGE Resume.pdf
+# Original resume sources (the served copy lives in public/)
+REECE BUNNAGE Resume*.pdf
+
+# Portrait source (the cropped, optimized copy lives in public/images/)
+Reece-B-Photo.png
 
 # Loose screenshots dropped in the project root for optimizing
 Screenshot*.png

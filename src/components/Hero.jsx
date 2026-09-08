@@ -44,6 +44,14 @@ export default function Hero() {
         <p className="font-head text-sm font-bold uppercase tracking-[0.2em] text-ground">
           {profile.role}
         </p>
+        {/* The direction, not the title. Steel would read as the obvious
+            "subordinate" colour here but only clears 2.79:1 on white; smoke-mid
+            is 5.74:1 and still recedes against the ground-coloured line above. */}
+        {profile.direction && (
+          <p className="mt-1.5 font-head text-sm font-semibold text-smoke-mid">
+            &mdash; {profile.direction}
+          </p>
+        )}
         <h1 className="mt-3">{profile.name}</h1>
         <p className="mt-5 max-w-xl text-lg leading-relaxed text-smoke-dark">
           {profile.tagline}

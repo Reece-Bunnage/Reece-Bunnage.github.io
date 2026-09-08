@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import SectionHeading from '../components/SectionHeading.jsx'
 import Reveal from '../components/Reveal.jsx'
 import Band from '../components/Band.jsx'
@@ -110,7 +111,7 @@ export default function About() {
       <Band tone="cream">
         <div>
           <Card title="Skills">
-            <div className="grid gap-6 sm:grid-cols-3">
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {skills.map((group) => (
                 <div key={group.group}>
                   <h3 className="!pt-0 text-base text-ink sm:text-base">{group.group}</h3>
@@ -124,7 +125,7 @@ export default function About() {
         </div>
 
         <div className="mt-8 grid gap-8 md:grid-cols-2">
-          <Card title="Certifications & Awards">
+          <Card title="Awards & Recognition">
             <ul className="space-y-4">
               {awards.map((award) => (
                 <li key={award.title}>
@@ -133,6 +134,16 @@ export default function About() {
                 </li>
               ))}
             </ul>
+            <p className="mt-8 text-sm text-smoke-dark">
+              <Link
+                to="/credentials"
+                className="font-semibold text-ground underline decoration-steel
+                           decoration-2 underline-offset-2 hover:decoration-ground"
+              >
+                Certifications and coursework
+              </Link>{' '}
+              have their own page.
+            </p>
           </Card>
 
           <Card title="Involvement">

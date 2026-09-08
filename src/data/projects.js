@@ -151,7 +151,7 @@ export const projects = [
     ],
     bulletsTitle: 'What this involved:',
     bullets: [
-      'Automating device inventory processes, removing inactive devices and users from Active Directory to improve system accuracy and security hygiene by 10%',
+      'Executing an access-device review that identified and removed inactive user accounts and unmanaged devices from Active Directory, reducing vulnerability',
       'Leading the initiative to formalize the department IT knowledge base',
       'Reducing repeat support requests and improving onboarding for new student employees',
       'Resolving software, hardware, and network issues for 100+ students and faculty using Active Directory/Intune, Jamf, and diagnostic tools',
@@ -199,17 +199,17 @@ export const projects = [
   {
     slug: 'risk-assessment',
     kind: 'build',
-    featured: false,
-    title: 'bunnage shield',
-    context: 'Self-directed — AI-powered vendor risk assessment',
+    featured: true,
+    title: 'BunnageShield',
+    context: 'Self-directed — third-party vendor risk assessment',
     summary:
       'Helps security and compliance teams evaluate third-party vendor risk in minutes instead of weeks: answer 14 questions, get an AI-generated risk report.',
     image: '/images/projects/risk-assessment.jpg',
     icon: 'shield',
-    tags: ['React', 'AI', 'Vendor Risk', 'Compliance'],
+    tags: ['Vendor Risk', 'Compliance', 'React', 'Google Gemini API', 'Vite'],
     body: [
       'Before a company signs with a vendor, someone is supposed to assess the risk. In practice that review is slow enough that it often gets skipped, or reduced to a form nobody reads — which is exactly when a bad integration gets approved.',
-      'bunnage shield compresses that review into 14 questions and returns an AI-generated risk report. It keeps a history of past assessments, so a team can see how a vendor was evaluated and revisit the reasoning later.',
+      'BunnageShield compresses that review into 14 questions and returns an AI-generated risk report. It keeps a history of past assessments, so a team can see how a vendor was evaluated and revisit the reasoning later.',
       'This is the project that sits closest to where I am headed: AI doing the analytical work, applied to a governance decision a business actually has to make.',
     ],
     bulletsTitle: 'What this involved:',
@@ -282,7 +282,7 @@ export const projects = [
   {
     slug: 'clothing-search',
     kind: 'build',
-    featured: true,
+    featured: false,
     title: 'Clothing Search',
     context: 'Self-directed — built for a real user',
     summary:

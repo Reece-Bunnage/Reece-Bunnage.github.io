@@ -11,7 +11,8 @@ export default function NotFound() {
       <p className="font-head text-6xl font-bold text-ground">404</p>
       <h1 className="mt-4">This page doesn&rsquo;t exist</h1>
       <p className="mt-4 max-w-md text-smoke-mid">
-        The link may be out of date. Everything lives under Home, About, and Projects.
+        The link may be out of date. Everything lives under Home, About, Projects,
+        and Credentials.
       </p>
       <Link to="/" className="btn-primary mt-8">
         Back home

@@ -1,6 +1,6 @@
 export const experience = [
   {
-    title: 'Automation Consultant',
+    title: 'Automation Consultant, Intern',
     org: 'SOLVD.cloud',
     orgNote: 'AI & Salesforce Consulting',
     location: 'Lehi, UT',
@@ -21,9 +21,9 @@ export const experience = [
     dates: 'Mar 2025 — Present',
     current: true,
     bullets: [
-      'Delivered technical support to 100+ students and faculty, resolving software, hardware, and network issues using Active Directory/Intune, Jamf, and diagnostic tools',
-      'Led initiative to formalize IT knowledge base, reducing repeat support requests and improving onboarding for new student employees',
-      'Automated device inventory processes, removing inactive devices and users from Active Directory to improve system accuracy and security hygiene by 10%',
+      'Administered identity and endpoint management for 100+ students and faculty across Active Directory, Microsoft Intune, and Jamf, provisioning accounts and enforcing device compliance policies',
+      'Executed an access-device review that identified and removed inactive user accounts and unmanaged devices from Active Directory, reducing vulnerability',
+      'Authored IT knowledge base documentation that reduced repeat incidents and standardized onboarding for new student technicians',
       'Built and maintained department web content in Brightspot CMS for the BYU Planetarium and Physics & Astronomy Tech Office sites',
     ],
   },
