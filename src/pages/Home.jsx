@@ -6,7 +6,7 @@ import SectionHeading from '../components/SectionHeading.jsx'
 import Reveal from '../components/Reveal.jsx'
 import Band from '../components/Band.jsx'
 import ContactCta from '../components/ContactCta.jsx'
-import { featuredProjects } from '../data/projects.js'
+import { featuredProjects, writing } from '../data/projects.js'
 import { profile } from '../data/profile.js'
 
 export default function Home() {
@@ -30,10 +30,24 @@ export default function Home() {
             </Reveal>
           ))}
         </div>
-        <div className="mt-10 text-center">
+        <div className="mt-10 flex flex-col items-center gap-5">
           <Link to="/projects" className="btn-primary">
             View all projects
           </Link>
+          {writing[0] && (
+            <p className="max-w-xl text-center text-sm text-smoke-mid">
+              Also writing:{' '}
+              <Link
+                to={`/projects/${writing[0].slug}`}
+                className="font-semibold text-ground underline decoration-steel
+                           decoration-2 underline-offset-2 hover:decoration-ground"
+              >
+                {writing[0].title}
+              </Link>{' '}
+              &mdash; an introduction to security for new business owners, through
+              the three little pigs.
+            </p>
+          )}
         </div>
       </Band>
 

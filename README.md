@@ -34,7 +34,7 @@ To add a project, append one object to the `projects` array in
 ```js
 {
   slug: 'url-slug',              // becomes /projects/url-slug
-  kind: 'build',                 // 'case-study' | 'build' | 'other'
+  kind: 'build',                 // 'case-study' | 'build' | 'other' | 'writing'
   featured: false,               // true -> shows on the home page (keep to 3)
   title: 'Project Name',
   context: 'Where this came from',
@@ -54,6 +54,32 @@ To add a project, append one object to the `projects` array in
   links: [{ label: 'View on GitHub', url: 'https://...' }],
 }
 ```
+
+### Which band a project lands in
+
+`/projects` renders three bands, driven by the selectors at the bottom of
+`projects.js`:
+
+| `kind` | Band |
+| --- | --- |
+| `case-study`, `build` | **Projects** (`mainProjects`) |
+| `other` | **Other Development Projects** (`otherProjects`, `compact` cards) |
+| `writing` | **Writing** (`writing`) |
+
+`mainProjects` is `kind !== 'other' && kind !== 'writing'`, so it is the default
+band — a new `kind` lands there unless you add it to that filter too. Every kind
+still gets a detail page at `/projects/:slug`.
+
+The Writing band's grid is `sm:grid-cols-2`, sized for one or two pieces; bump it
+to `lg:grid-cols-3` once there is a third. `writing[0]` also drives the one-line
+"Also writing" mention under the featured projects on the home page, so the
+newest piece goes **last** in the array — and the sentence after the link in
+`src/pages/Home.jsx` is specific to that article, so it needs rewriting when a
+newer one takes its place.
+
+Array order matters for one other thing: the "Next:" link at the foot of a detail
+page is `projects[(index + 1) % projects.length]`, a plain wraparound over the
+whole array regardless of kind.
 
 ### One card, several projects
 

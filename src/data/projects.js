@@ -372,9 +372,48 @@ export const projects = [
       },
     ],
   },
+  {
+    slug: 'cyber-hygiene-small-business',
+    kind: 'writing',
+    // The home page gets a one-line mention rather than a fourth featured card.
+    featured: false,
+    title: 'Cyber Hygiene for Small Businesses',
+    context: 'Writing \u2014 published on LinkedIn',
+    meta: 'June 2025',
+    summary:
+      'An introduction to cybersecurity for new business owners, told through the three little pigs: why weak passwords and phishing are the wolf at the door, and which habits to build before growth makes them expensive.',
+    image: null,
+    icon: 'book',
+    tags: ['Cyber Hygiene', 'Small Business', 'Security Awareness', 'Technical Writing'],
+    body: [
+      'Starting a business is exciting, and security is the thing that gets postponed \u2014 there is always something more urgent than a password policy. The article makes that case in terms a new owner already knows: the three little pigs. A straw house goes up fast and comes down just as fast, and plenty of new businesses are running one without meaning to.',
+      'The threats it covers are the unglamorous ones \u2014 weak passwords, phishing, and the digital risks that get overlooked while everyone is focused on growth. Each is paired with a real-world example and a habit that costs almost nothing to adopt at the start and a great deal to retrofit later.',
+      'I wrote it for a business communication course at BYU, and the assignment shaped the whole approach: the reader is a future business owner with no security background and no patience for jargon. Turning a technical risk into a decision someone will actually act on is most of what security consulting is, so the constraint turned out to be the useful part.',
+    ],
+    bulletsTitle: 'What the article covers:',
+    bullets: [
+      'Weak and reused passwords \u2014 the cheapest exposure to close',
+      'Phishing, and what it looks like when it arrives at a small business',
+      'The digital risks new owners overlook while focused on growth',
+      'Real-world examples paired with habits to build from the start, rather than after an incident',
+    ],
+    outcome:
+      "Just like the little pigs' brick house kept the wolf out, good cyber hygiene keeps your business safe.",
+    note: 'Summary written for this site. The full article is on LinkedIn.',
+    links: [
+      {
+        label: 'Read it on LinkedIn',
+        url: 'https://www.linkedin.com/feed/update/urn:li:activity:7340824586076184576/',
+      },
+    ],
+  },
 ]
 
 export const featuredProjects = projects.filter((p) => p.featured)
-export const mainProjects = projects.filter((p) => p.kind !== 'other')
+// Every `kind` except the two that get their own band on the Projects page.
+export const mainProjects = projects.filter(
+  (p) => p.kind !== 'other' && p.kind !== 'writing',
+)
 export const otherProjects = projects.filter((p) => p.kind === 'other')
+export const writing = projects.filter((p) => p.kind === 'writing')
 export const getProject = (slug) => projects.find((p) => p.slug === slug)
