@@ -8,9 +8,9 @@ function Portrait() {
   const [failed, setFailed] = useState(false)
 
   const frame =
-    // object-top: the source is a 2:3 headshot, so a centred square crop would
-    // cut the top of the head off.
-    'h-64 w-64 rounded-2xl object-cover object-top shadow-xl shadow-ink/25 sm:h-80 sm:w-80'
+    // object-[center_15%]: the source is a 2:3 studio headshot with headroom, so
+    // a centred square crop cuts the face and object-top leaves too much backdrop.
+    'h-64 w-64 rounded-2xl object-cover object-[center_15%] shadow-xl shadow-ink/25 sm:h-80 sm:w-80'
 
   if (failed) {
     return (
@@ -44,14 +44,6 @@ export default function Hero() {
         <p className="font-head text-sm font-bold uppercase tracking-[0.2em] text-ground">
           {profile.role}
         </p>
-        {/* The direction, not the title. Steel would read as the obvious
-            "subordinate" colour here but only clears 2.79:1 on white; smoke-mid
-            is 5.74:1 and still recedes against the ground-coloured line above. */}
-        {profile.direction && (
-          <p className="mt-1.5 font-head text-sm font-semibold text-smoke-mid">
-            &mdash; {profile.direction}
-          </p>
-        )}
         <h1 className="mt-3">{profile.name}</h1>
         <p className="mt-5 max-w-xl text-lg leading-relaxed text-smoke-dark">
           {profile.tagline}

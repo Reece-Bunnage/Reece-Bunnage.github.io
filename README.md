@@ -1,8 +1,8 @@
 # reece-bunnage.github.io
 
 Personal portfolio for Reece Bunnage — Information Systems at BYU (minors in
-Cybersecurity and Computer Science), automation consultant at SOLVD.cloud,
-building toward cybersecurity consulting. Live at
+Cybersecurity and Computer Science) and technology consultant at SOLVD.cloud.
+Live at
 **https://reece-bunnage.github.io**.
 
 ## Stack

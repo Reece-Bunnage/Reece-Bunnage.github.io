@@ -48,6 +48,15 @@ export const projects = [
         ],
         summary:
           'An enterprise software client needed a new AI product line to be quotable on its own rather than bolted onto an existing product. Eleven weeks, three user stories, thirty-seven subtasks, and a production deployment across 29 quote templates.',
+        impact: {
+          text: 'The client’s sales team can now sell the new AI product line on its own — a deal that previously couldn’t be quoted at all — and it reached production with a backstop that keeps it off accounts that aren’t entitled to it.',
+          stats: [
+            { value: '29', label: 'quote templates shipped to production' },
+            { value: '7', label: 'blocking developer questions resolved' },
+            { value: '8', label: 'post-UAT defects triaged' },
+            { value: '2', label: 'descoped builds caught before release' },
+          ],
+        },
         body: [
           'The client’s sales team could only quote the new product line on top of an existing platform product. A customer who wanted just the new line couldn’t be quoted at all. Removing that dependency wasn’t one change — it touched product configuration, pricing, quote documents, approval rules, and a downstream billing integration. The hard part wasn’t building anything. It was working out what the system needed to stop requiring, and proving that loosening those requirements wouldn’t let a bad quote through.',
         ],
@@ -62,8 +71,8 @@ export const projects = [
           'Approving the production deployment across 29 quote templates',
         ],
         takeaway: {
-          label: 'The call I’d defend',
-          text: 'The requirement everyone wanted to remove was also a safety net. I pushed for a quote-level validation rule as a backstop so that even with the prerequisites relaxed, the new products couldn’t land on an account that wasn’t entitled to them. Slightly more to maintain, and it means the loosening can’t be exploited by accident.',
+          label: 'What I did',
+          text: 'The requirement everyone wanted to remove was also a safety net, so I pushed for a quote-level validation rule as a backstop so that even with the prerequisites relaxed, the new products couldn’t land on an account that wasn’t entitled to them. Slightly more to maintain, and it means the loosening can’t be exploited by accident.',
         },
       },
       {
@@ -80,6 +89,14 @@ export const projects = [
         ],
         summary:
           'Approved exceptions were deadlocking quotes — a validation rule would block the save even after the business had signed off on the exception. The fix had to unblock the rule without unblocking everyone.',
+        impact: {
+          text: 'Approved exceptions stopped deadlocking quotes, and sales operations got a way to clear one specific rule without switching off every other guardrail — visible only to the one team that should have it.',
+          stats: [
+            { value: '4', label: 'rules, each with its own scoped bypass' },
+            { value: '1', label: 'profile with access — verified as the real user' },
+            { value: '1', label: 'missed blocking rule caught before release' },
+          ],
+        },
         body: [
           'In Salesforce CPQ, a rule that requires Product B whenever Product A is on the quote is doing exactly its job — right up until someone approves an exception. Then the quote can’t be saved at all, and the rule that was protecting data integrity is just in the way. The obvious fix is a global admin override, which would have worked and would have been a bad idea: one switch that turns off every guardrail at once, available to whoever holds it.',
         ],
@@ -93,8 +110,8 @@ export const projects = [
           'Finding an adjacent validation rule the spec had missed that still blocked the save, and escalating it before release',
         ],
         takeaway: {
-          label: 'The call I’d defend',
-          text: 'One picklist value per rule instead of a single global bypass. It’s more configuration to maintain and more for a user to understand, and it buys something worth the cost — an override can never do more than the person who requested it intended.',
+          label: 'What I did',
+          text: 'Chose one picklist value per rule over a single global bypass. It’s more configuration to maintain and more for a user to understand, and it buys something worth the cost — an override can never do more than the person who requested it intended.',
         },
       },
       {
@@ -110,6 +127,13 @@ export const projects = [
         ],
         summary:
           'Requirements arrived as hour-long calls; developers needed build-ready specs. I built a workflow that converts one into the other and keeps the judgment calls human.',
+        impact: {
+          text: 'Developers built from a spec that reflected the latest decision rather than last week’s, instead of waiting while someone re-read hours of call recordings — and nothing AI-generated reached them without my review.',
+          stats: [
+            { value: '37', label: 'subtasks built from my design' },
+            { value: '3', label: 'user stories traced to it' },
+          ],
+        },
         body: [
           'On a fast-moving release, decisions get made on a call and then revised on the next one. Reading back through transcripts to work out what’s still true is slow — and it’s the kind of slow that makes a whole project late, because developers sit blocked while someone reconstructs the current state of the requirements. I used Claude against the meeting transcripts to extract what had actually changed, then wrote the design myself from that.',
         ],
@@ -121,7 +145,7 @@ export const projects = [
           'Reviewing and correcting AI output before it reached anyone else, and treating peer review of my own draft as part of the process — two of my field-design decisions were corrected in review, which is what review is for',
         ],
         takeaway: {
-          label: 'The distinction that matters',
+          label: 'What I did',
           text: 'AI drafted, I decided. Nothing it produced reached a developer without going through me, and I own what shipped. I hold Anthropic’s Claude Certified Architect credential, and the reason I think that’s worth something is not that it means I can prompt well — it’s that using these tools on real client work requires knowing where their output stops being trustworthy.',
         },
       },
@@ -137,6 +161,13 @@ export const projects = [
     context: 'BYU Department of Physics and Astronomy — IT Computer Support Specialist',
     summary:
       'Automated Active Directory cleanup and built the documentation that keeps the same question from getting asked twice.',
+    impact: {
+      text: 'Inactive accounts and unmanaged devices came out of the department directory — fewer doors left open — and recurring questions now have a documented answer that new student employees onboard from. The knowledge base was an initiative I led.',
+      stats: [
+        { value: '100+', label: 'students and faculty supported' },
+        { value: '3', label: 'identity and device platforms — AD, Intune, Jamf' },
+      ],
+    },
     image: null,
     icon: 'shield',
     tags: [
@@ -167,6 +198,12 @@ export const projects = [
     context: 'BYU Department of Physics and Astronomy — Brightspot CMS',
     summary:
       'Built and maintained pages for two live BYU department sites: the Royden G. Derrick Planetarium and the Physics & Astronomy Tech Office.',
+    impact: {
+      text: 'Public visitors can find a show, book a group, and get directions — and department users can answer their own IT questions — without emailing or calling someone first.',
+      stats: [
+        { value: '2', label: 'live BYU department sites I build and maintain' },
+      ],
+    },
     image: '/images/projects/planetarium.jpg',
     gallery: [
       {
@@ -204,6 +241,13 @@ export const projects = [
     context: 'Self-directed — third-party vendor risk assessment',
     summary:
       'Helps security and compliance teams evaluate third-party vendor risk in minutes instead of weeks: answer 14 questions, get an AI-generated risk report.',
+    impact: {
+      text: 'Built on my own time to close a real gap: vendor reviews that get skipped because they’re slow. It’s live today — anyone can run an assessment and get a report without installing anything.',
+      stats: [
+        { value: '14', label: 'questions to a full risk report' },
+        { value: 'Live', label: 'public demo, deployed and usable' },
+      ],
+    },
     image: '/images/projects/risk-assessment.jpg',
     icon: 'shield',
     tags: ['Vendor Risk', 'Compliance', 'React', 'Google Gemini API', 'Vite'],
@@ -238,6 +282,13 @@ export const projects = [
     context: 'Self-directed — TypeScript',
     summary:
       'A local-first budgeting app with a rules engine that files transactions into buckets automatically, so categorizing a month of spending stops being manual work.',
+    impact: {
+      text: 'Categorizing a month of spending goes from a manual chore to rules that run on their own — without handing bank credentials to a hosted service.',
+      stats: [
+        { value: '0', label: 'credentials held by a hosted server' },
+        { value: '2', label: 'live bank integrations — Plaid and Teller' },
+      ],
+    },
     image: '/images/projects/bucketeer-dashboard.jpg',
     gallery: [
       {
@@ -287,6 +338,13 @@ export const projects = [
     context: 'Self-directed — built for a real user',
     summary:
       'Searches eight stores at once by size and actual measurements, so my wife can stop opening a tab per retailer.',
+    impact: {
+      text: 'One search replaces eight browser tabs, and every decision was shaped by the person who actually uses it.',
+      stats: [
+        { value: '8', label: 'retailers in a single search' },
+        { value: '1', label: 'real user giving feedback within a day' },
+      ],
+    },
     image: '/images/projects/clothing-search.jpg',
     icon: 'search',
     tags: ['JavaScript', 'Search', 'UX'],

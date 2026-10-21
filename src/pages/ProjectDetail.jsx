@@ -24,8 +24,32 @@ function Bullets({ items }) {
   )
 }
 
+// The outcome up front, for someone skimming: one sentence on what changed
+// and for whom, then the counts that back it. Only numbers from the write-up
+// itself go in `stats` — no estimated savings.
+function Impact({ impact }) {
+  return (
+    <div className="mt-6 rounded-xl bg-cream p-5 sm:p-6">
+      <p className="font-head text-xs font-bold uppercase tracking-[0.2em] text-ground">
+        Impact
+      </p>
+      <p className="mt-2 text-lg leading-relaxed text-ink">{impact.text}</p>
+      {impact.stats?.length > 0 && (
+        <ul className="mt-5 grid grid-cols-2 gap-4 sm:grid-cols-4">
+          {impact.stats.map((stat) => (
+            <li key={stat.label} className="border-l-2 border-steel pl-3">
+              <p className="font-head text-3xl font-bold text-ground">{stat.value}</p>
+              <p className="mt-1 text-sm leading-snug text-smoke-mid">{stat.label}</p>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  )
+}
+
 // The highlighted closing statement — an `outcome` string, or a `takeaway`
-// whose label names the kind of call being made ("The call I'd defend").
+// with a label ("What I did").
 function Callout({ label, children }) {
   return (
     <p
@@ -64,6 +88,8 @@ function ProjectSection({ section, index }) {
         <p className="mt-6 border-l-2 border-steel pl-4 text-lg leading-relaxed text-ink">
           {section.summary}
         </p>
+
+        {section.impact && <Impact impact={section.impact} />}
 
         <div className="prose-body mt-6">
           {section.body.map((paragraph) => (
@@ -130,6 +156,8 @@ export default function ProjectDetail() {
                 }`}
               />
             )}
+
+            {project.impact && <Impact impact={project.impact} />}
 
             <div className="prose-body mt-8">
               {project.body.map((paragraph) => (

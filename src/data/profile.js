@@ -1,17 +1,13 @@
 export const profile = {
   name: 'Reece Bunnage',
-  role: 'Automation & Business Systems Consultant',
-  // The role is the job I hold; the direction is the one I'm moving toward.
-  // Kept as separate fields so the hero can render it as a subordinate line
-  // rather than overstating the title.
-  direction: 'building toward cybersecurity consulting',
+  role: 'Technology Consultant',
   location: 'Utah',
   tagline:
-    'I build automation and business systems that take manual work off of the people who do the work — and I sit with those people to figure out what to automate in the first place.',
+    "I make the systems people depend on actually work for them — automating the manual work, designing around how teams really operate, and making sure it's secure enough to trust.",
   intro: [
     "I'm an Information Systems student at BYU's Marriott School of Business, minoring in Cybersecurity and Computer Science, and an automation consultant at SOLVD.cloud.",
     "Most of what I do comes down to the same pattern: find the step where a team is doing something by hand, understand why it works that way, and rebuild it so the system does it instead. At SOLVD that looks like requirements, solution design, and QA on a Salesforce CPQ implementation for an enterprise client. At BYU's Department of Physics and Astronomy it has looked like identity and endpoint administration across Active Directory, Intune, and Jamf, an access review that pulled inactive accounts and unmanaged devices out of the directory, and a knowledge base that keeps the same question from getting asked twice.",
-    "The direction I'm building toward is the security side of business systems — identity and access, third-party risk, and the controls that decide who is allowed to do what. It's the same translation problem as automation work: what a team needs, against what a system can actually be made to enforce. I'm working toward CompTIA Security+, and applying to BYU's five-year integrated MISM program, since its emphasis on leadership and project management is the half of security consulting that technical coursework doesn't cover.",
+    "What ties it together is that a system is only worth building if people can rely on it — which means it has to fit how they actually work, and it has to be secure. That's why identity, access, and controls run through all of it: they decide who is allowed to do what, and they're usually where a well-built system quietly breaks. I'm working toward CompTIA Security+, and applying to BYU's five-year integrated MISM program for the leadership and project management half of consulting that technical coursework doesn't cover.",
   ],
   email: 'rjbunnage@gmail.com',
   linkedin: 'https://www.linkedin.com/in/reece-bunnage/',
@@ -38,23 +34,22 @@ export const education = {
   details: ['GPA 4.00 / 4.00', 'BYU Academic Scholarship'],
 }
 
-// Rendered on /credentials. Kept in resume order — Security+ leads because it
-// is the direction, and the `status` badge does the work of being honest about
-// what is earned versus in progress.
+// Rendered on /credentials. Earned first, newest first; in-progress last, with
+// the `status` badge doing the work of being honest about which is which.
 export const certifications = [
-  {
-    name: 'CompTIA Security+',
-    issuer: 'CompTIA',
-    status: 'In progress',
-    date: 'Target November 2026',
-    what: 'The baseline credential for security work — threat types, secure architecture, risk management, and the controls that mitigate them.',
-  },
   {
     name: 'Claude Certified Architect',
     issuer: 'Anthropic',
     status: 'Earned',
     date: '2026',
     what: "Designing and deploying systems built on Claude. What it's worth on client work isn't that I can prompt well — it's knowing where a model's output stops being trustworthy.",
+  },
+  {
+    name: 'AWS Certified Cloud Practitioner',
+    issuer: 'Amazon Web Services',
+    status: 'Earned',
+    date: '2026',
+    what: 'Cloud fundamentals, including the shared responsibility model and IAM.',
   },
   {
     name: 'Salesforce Certified Platform Administrator',
@@ -64,11 +59,11 @@ export const certifications = [
     what: 'Platform configuration and the security model — profiles, permission sets, and record-level sharing. The access-design half of it is what I use most.',
   },
   {
-    name: 'AWS Certified Cloud Practitioner',
-    issuer: 'Amazon Web Services',
+    name: 'CompTIA Security+',
+    issuer: 'CompTIA',
     status: 'In progress',
-    date: 'Target December 2026',
-    what: 'Cloud fundamentals, including the shared responsibility model and IAM.',
+    date: 'Target early 2027',
+    what: 'The baseline credential for security work — threat types, secure architecture, risk management, and the controls that mitigate them.',
   },
 ]
 

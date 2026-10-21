@@ -49,7 +49,7 @@ export default function About() {
       <Band tone="paper">
         <SectionHeading
           title="About"
-          subtitle="My background, the direction I'm building toward, and what I've worked on so far."
+          subtitle="My background, how I work, and what I've built so far."
         />
 
         <Reveal>
