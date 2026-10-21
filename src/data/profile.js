@@ -67,7 +67,34 @@ export const certifications = [
   },
 ]
 
+// IS junior core first (what I'm in now), then technical courses, then the
+// Marriott business core as one entry — listed individually it would bury the
+// technical work.
 export const coursework = [
+  {
+    code: 'IS 401',
+    name: 'Project Management and Systems Design',
+    note: 'IS junior core — Fall 2026',
+    what: 'Requirements, system design, and running the project that delivers it — taking a business need to a buildable spec.',
+  },
+  {
+    code: 'IS 402',
+    name: 'Database Systems',
+    note: 'IS junior core — Fall 2026',
+    what: 'Relational modeling, normalization, and SQL.',
+  },
+  {
+    code: 'IS 403',
+    name: 'Principles of Business Programming',
+    note: 'IS junior core — Fall 2026',
+    what: 'Building data-driven business applications.',
+  },
+  {
+    code: 'IS 404',
+    name: 'Information Technology Infrastructure',
+    note: 'IS junior core — Fall 2026',
+    what: 'The networks, servers, and cloud services business systems run on — and where they can be exposed.',
+  },
   {
     code: 'ACC 551',
     name: 'Risk Assurance and Information Technology Audit',
@@ -83,6 +110,12 @@ export const coursework = [
     code: 'IS 303 / CS 111',
     name: 'Intro to Programming',
     note: 'Python',
+  },
+  {
+    code: 'FIN 201 · MKTG 201 · GSCM 201 · ECON 110 · MCOM 320',
+    name: 'Marriott Business Core',
+    note: 'Principles of Finance, Marketing Management, Intro to Global Supply Chain Management, Economic Principles & Problems, Communication in Organizational Settings',
+    what: 'The side of the business the systems serve — how a company makes money, reaches customers, and moves product, and how to make a case to the people who decide.',
   },
 ]
 
