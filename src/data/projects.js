@@ -372,6 +372,50 @@ export const projects = [
     ],
   },
   {
+    slug: 'lucid-bot',
+    kind: 'build',
+    featured: false,
+    title: 'LPC 2026 Competition Bot',
+    context: 'Self-directed competition bot, built with my wife',
+    meta: 'October 2026 · Lucid Programming Competition',
+    summary:
+      'A C++ bot for the Lucid Programming Competition that took 1st and then 2nd in its first two ranked rounds and made the finals, then slid to 11th as rival teams changed their strategies between rounds and we didn’t.',
+    impact: {
+      text: 'Top two in the first two ranked rounds and a spot in the finals against teams from BYU, the University of Utah, and Utah State, and a hard lesson in agility: the teams that inspected and adapted every round overtook the one that played it safe.',
+      stats: [
+        { value: '1st', label: 'Round 1, of 16 teams' },
+        { value: '2nd', label: 'Round 2, of 15 teams, 6 gold behind first' },
+        { value: '5th', label: 'Semifinals, of 16 teams' },
+        { value: '11th', label: 'Finals, of 16 teams' },
+      ],
+    },
+    image: '/images/projects/lucid-bot.jpg',
+    icon: 'game',
+    tags: ['C++20', 'Game AI', 'Simulation', 'Agile', 'AI-Assisted Development'],
+    body: [
+      'The Lucid Programming Competition puts sixteen teams’ bots on the same map. Each turn, every bot gives each of its workers one order (move, mine, deposit, recruit, or build a base), and after 480 turns the team with the most gold in its bank wins. My wife and I entered as [BYU] Virginia, and like every team we had three hours to plan, build, and test our bot.',
+      'We built it around one idea: price everything in gold. Mining a deposit, exploring an unseen corner, hiring another worker, and building a base next to a gold field each get an estimated value minus the time they cost, and every worker takes the best option still available. Workers don’t pile onto the same deposit, and nothing gets started that can’t be banked before the match ends.',
+      'Alongside the bot we built an offline simulator of the game rules, so a change had to hold up across hundreds of simulated matches against several kinds of opponents before we shipped it. That discipline is why the bot was solid from the first ranked round: 1st place, then 2nd, six gold behind the winner.',
+      'We made it to the finals, but we slid on the way: 5th in the semifinals, then 11th in the finals. Every team could study replays of every match, ours included, and the teams around us treated each round like a sprint: review what happened, change something, ship it before the next one. By the finals several of them were racing to build bases across the rich center of the map in the first sixty turns, which locked us out of the best gold. The data was in front of me too. I saw the trend coming and decided to play it safe rather than risk breaking something that worked, and that cost us.',
+    ],
+    bulletsTitle: 'What this involved:',
+    bullets: [
+      'Writing the strategy in C++20 on top of the competition’s starter client: map memory, weighted 8-direction pathfinding, and an economic model for recruiting workers and building bases',
+      'Building an offline simulator of the game rules to benchmark strategy changes against the built-in bots and against copies of our own bot',
+      'Reading match replays after each round, which include every team’s actions, to see where our workers lost time and what the leading teams did differently',
+      'Hardening the client so a dropped connection or a slow turn couldn’t knock the bot out of a ranked match',
+      'Using Claude Code throughout, from the bot and simulator to the replay analysis',
+    ],
+    outcome:
+      'Take the opportunity to learn from the data around you and adapt. It makes things less comfortable, but it could give you the edge needed to win. I decided to play it safe, and it cost us.',
+    links: [
+      {
+        label: 'View on GitHub',
+        url: 'https://github.com/mow1472/lucid-bot',
+      },
+    ],
+  },
+  {
     slug: 'web-brawler',
     kind: 'other',
     featured: false,
