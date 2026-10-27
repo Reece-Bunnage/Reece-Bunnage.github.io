@@ -192,6 +192,34 @@ export const projects = [
       'Authoring 5+ self-service IT guides on printers, network drives, and SCCM, so new technicians can resolve issues without escalating and faculty can fix common problems on their own',
       'Resolving software, hardware, and network issues for students and faculty using Active Directory, Intune, Jamf, and diagnostic tools',
     ],
+    sections: [
+      {
+        id: 'ai-ticket-triage',
+        icon: 'ai',
+        title: 'AI Ticket Triage Prototype',
+        tags: ['ChatGPT', 'ClickUp', 'Prototyping', 'AI Governance', 'Help Desk'],
+        summary:
+          'Our team was spending real time triaging tickets before anyone fixed anything, so I prototyped a tool that connected our ClickUp ticket queue to the department’s ChatGPT license to prioritize tickets and draft the next step on each one.',
+        impact: {
+          text: 'It worked: it surfaced the tickets I could help on, drafted a comment when one needed a reply, and drafted troubleshooting steps when the fix was mine to work. It didn’t ship, because the department’s AI setup blocks unapproved integrations, and with ticket data involved that’s the right call.',
+        },
+        body: [
+          'Triage is the work before the work: reading through the queue, deciding what is urgent, and figuring out what each ticket actually needs. It happens on every ticket, and none of it fixes anything. That made it a good candidate for AI, since the judgment calls were small and repetitive and the output was a draft a person could check.',
+          'The prototype did what I built it to do. It never went into production. Support tickets carry information about people and their accounts, and the department’s AI setup only allows integrations that have been approved. Routing that data through a tool I had built on my own is exactly what that policy exists to stop.',
+        ],
+        bulletsTitle: 'What the prototype did:',
+        bullets: [
+          'Pulling open tickets from ClickUp and ranking them by priority, so the queue showed what needed attention first',
+          'Surfacing the tickets I could pick up, instead of scanning the whole queue for something to help on',
+          'Drafting a comment when a ticket needed a reply, ready for me to review and post',
+          'Drafting troubleshooting steps when the fix was mine, so I started from a plan instead of a blank ticket',
+        ],
+        takeaway: {
+          label: 'Value Provided',
+          text: 'An AI tool isn’t ready until it fits the organization’s governance. A prototype that works but can’t be approved hasn’t solved the problem yet. I bring that into my consulting work now: what data an integration is allowed to touch is part of the design, not a step after it.',
+        },
+      },
+    ],
     note: 'Internal university systems are not shown.',
     links: [],
   },
