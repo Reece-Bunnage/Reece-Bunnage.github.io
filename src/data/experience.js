@@ -7,10 +7,10 @@ export const experience = [
     dates: 'Sep 2025 – Present',
     current: true,
     bullets: [
-      'Drafted the technical design an offshore development team built from on an enterprise Salesforce CPQ release; three user stories and thirty-seven subtasks trace back to it',
-      'Owned QA for the release: authored the UAT test plan, ran the client acceptance session, and triaged eight post-UAT defects to pass/fail verdicts before approving the production deployment across 29 quote templates',
-      'Designed a per-rule bypass framework for CPQ product rules so approved exceptions could be cleared one rule at a time rather than through a global admin override',
-      'Used Claude against meeting transcripts to extract requirement changes into build-ready specs, reviewing and correcting every output before it reached a developer',
+      'Opened a new revenue stream for an enterprise software client by owning Salesforce CPQ requirements and QA for a go-to-market release that lets sales quote its new AI product line on its own for the first time',
+      'Authored the UAT test plan, ran the client acceptance session, and triaged eight post-UAT defects to pass/fail verdicts before approving the production deployment across 29 quote templates',
+      'Eliminated time-consuming quote rebuilds for the client’s Sales Ops team by prototyping a Salesforce CPQ rule-bypass framework, then owned the follow-up project the team requested after adopting the first',
+      'Volunteered for and earned Anthropic’s Claude Certified Architect credential, passing second at the firm and contributing one of the 10 certifications that qualified it as an Anthropic partner',
     ],
   },
   {
@@ -21,9 +21,9 @@ export const experience = [
     dates: 'Mar 2025 – Present',
     current: true,
     bullets: [
-      'Administered identity and endpoint management for 100+ students and faculty across Active Directory, Microsoft Intune, and Jamf, provisioning accounts and enforcing device compliance policies',
-      'Executed an access-device review that identified and removed inactive user accounts and unmanaged devices from Active Directory, reducing vulnerability',
-      'Authored IT knowledge base documentation that reduced repeat incidents and standardized onboarding for new student technicians',
+      'Reduced unauthorized-access risk by leading an Active Directory and asset review that removed 30 accounts left active after users and contractors departed and reconciled 250 device records',
+      'Authored 5+ self-service IT guides on printers, network drives, and SCCM, enabling new technicians to resolve issues without escalating and faculty to fix common problems on their own',
+      'Moved department endpoint management to the cloud by migrating every SCCM-managed device to Microsoft Intune and getting the full IT team trained, while enforcing security policies across 700 devices',
       'Built and maintained department web content in Brightspot CMS for the BYU Planetarium and Physics & Astronomy Tech Office sites',
     ],
   },

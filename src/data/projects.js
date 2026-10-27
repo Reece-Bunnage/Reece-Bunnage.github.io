@@ -49,7 +49,7 @@ export const projects = [
         summary:
           'An enterprise software client needed a new AI product line to be quotable on its own rather than bolted onto an existing product. Eleven weeks, three user stories, thirty-seven subtasks, and a production deployment across 29 quote templates.',
         impact: {
-          text: 'The client’s sales team can now sell the new AI product line on its own (a deal that previously couldn’t be quoted at all), and it reached production with a backstop that keeps it off accounts that aren’t entitled to it.',
+          text: 'Opened a new revenue stream for the client: its sales team can now quote the new AI product line on its own for the first time (a deal that previously couldn’t be quoted at all), and it reached production with a backstop that keeps it off accounts that aren’t entitled to it.',
           stats: [
             { value: '29', label: 'quote templates shipped to production' },
             { value: '7', label: 'blocking developer questions resolved' },
@@ -88,9 +88,9 @@ export const projects = [
           'Client UAT',
         ],
         summary:
-          'Approved exceptions were deadlocking quotes: a validation rule would block the save even after the business had signed off on the exception. The fix had to unblock the rule without unblocking everyone.',
+          'Approved exceptions were deadlocking quotes: a validation rule would block the save even after the business had signed off on the exception, and Sales Ops was left rebuilding the quote. The fix had to unblock the rule without unblocking everyone.',
         impact: {
-          text: 'Approved exceptions stopped deadlocking quotes, and sales operations got a way to clear one specific rule without switching off every other guardrail, visible only to the one team that should have it.',
+          text: 'Eliminated time-consuming quote rebuilds for the client’s Sales Ops team. They got a way to clear one specific rule without switching off every other guardrail, visible only to the one team that should have it, and after adopting it they asked me to own the follow-up project.',
           stats: [
             { value: '4', label: 'rules, each with its own scoped bypass' },
             { value: '1', label: 'profile with access, verified as the real user' },
@@ -102,12 +102,13 @@ export const projects = [
         ],
         bulletsTitle: 'What this involved:',
         bullets: [
-          'Designing a per-rule bypass: a multi-select picklist where each value disarms exactly one named rule, so clearing one blocker never silently clears another',
+          'Prototyping a per-rule bypass: a multi-select picklist where each value disarms exactly one named rule, so clearing one blocker never silently clears another',
           'Diagnosing that error conditions couldn’t evaluate the multi-select field directly, and specifying a formula field that flattens the selected values into text the conditions can parse',
           'Specifying four summary variables and four error conditions, and writing the deployment plan',
           'Authoring the test script (naming the specific product cohorts and quote records to test against and to exclude), then executing it across all four rules in multiple quote scenarios',
           'Verifying least-privilege access by logging in as the client’s actual sales-operations user to confirm the field was invisible to every other profile',
           'Finding an adjacent validation rule the spec had missed that still blocked the save, and escalating it before release',
+          'Owning the follow-up project the Sales Ops team requested after adopting the first framework',
         ],
         takeaway: {
           label: 'Value Provided',
@@ -132,6 +133,7 @@ export const projects = [
           stats: [
             { value: '37', label: 'subtasks built from my design' },
             { value: '3', label: 'user stories traced to it' },
+            { value: '2nd', label: 'at the firm to earn Claude Certified Architect' },
           ],
         },
         body: [
@@ -146,7 +148,7 @@ export const projects = [
         ],
         takeaway: {
           label: 'Value Provided',
-          text: 'AI drafted, I decided. Nothing it produced reached a developer without going through me, and I own what shipped. I hold Anthropic’s Claude Certified Architect credential, and the reason I think that’s worth something is not that it means I can prompt well. It’s that using these tools on real client work requires knowing where their output stops being trustworthy.',
+          text: 'AI drafted, I decided. Nothing it produced reached a developer without going through me, and I own what shipped. I volunteered for Anthropic’s Claude Certified Architect credential and was the second at the firm to pass it, one of the 10 certifications that qualified SOLVD as an Anthropic partner. The reason I think that’s worth something is not that it means I can prompt well. It’s that using these tools on real client work requires knowing where their output stops being trustworthy.',
         },
       },
     ],
@@ -157,15 +159,17 @@ export const projects = [
     slug: 'it-automation-knowledge-base',
     kind: 'case-study',
     featured: false,
-    title: 'IT Automation & Knowledge Base',
+    title: 'Identity, Endpoint & Knowledge Base Work',
     context: 'BYU Department of Physics and Astronomy, IT Computer Support Specialist',
     summary:
-      'Automated Active Directory cleanup and built the documentation that keeps the same question from getting asked twice.',
+      'Led an Active Directory and asset review, moved department endpoint management from SCCM to Intune, and wrote the self-service guides that keep the same question from getting asked twice.',
     impact: {
-      text: 'Inactive accounts and unmanaged devices came out of the department directory (fewer doors left open), and recurring questions now have a documented answer that new student employees onboard from. The knowledge base was an initiative I led.',
+      text: 'Thirty accounts left active after users and contractors departed came out of the directory (fewer doors left open), every managed device now runs under cloud policy, and new technicians resolve issues without escalating while faculty fix common problems on their own.',
       stats: [
-        { value: '100+', label: 'students and faculty supported' },
-        { value: '3', label: 'identity and device platforms: AD, Intune, Jamf' },
+        { value: '30', label: 'stale accounts removed from Active Directory' },
+        { value: '250', label: 'device records reconciled' },
+        { value: '700', label: 'devices under Intune security policy' },
+        { value: '5+', label: 'self-service IT guides authored' },
       ],
     },
     image: null,
@@ -173,19 +177,20 @@ export const projects = [
     tags: [
       'Active Directory',
       'Intune',
+      'SCCM',
+      'Endpoint Migration',
       'Jamf',
-      'Process Automation',
       'Documentation',
     ],
     body: [
-      'Supporting 100+ students and faculty surfaces the same two problems over and over: records that drift out of date, and questions that get answered from scratch every time. Both are automation problems more than they are support problems.',
+      'Supporting a department surfaces the same problems over and over: records that drift out of date, devices managed by an on-premises tool the team was moving away from, and questions that get answered from scratch every time. Each one was worth fixing at the root instead of one ticket at a time.',
     ],
     bulletsTitle: 'What this involved:',
     bullets: [
-      'Executing an access-device review that identified and removed inactive user accounts and unmanaged devices from Active Directory, reducing vulnerability',
-      'Leading the initiative to formalize the department IT knowledge base',
-      'Reducing repeat support requests and improving onboarding for new student employees',
-      'Resolving software, hardware, and network issues for 100+ students and faculty using Active Directory/Intune, Jamf, and diagnostic tools',
+      'Leading an Active Directory and asset review that removed 30 accounts left active after users and contractors departed and reconciled 250 device records, reducing unauthorized-access risk',
+      'Migrating every SCCM-managed device to Microsoft Intune and getting the full IT team trained, while enforcing security policies across 700 devices',
+      'Authoring 5+ self-service IT guides on printers, network drives, and SCCM, so new technicians can resolve issues without escalating and faculty can fix common problems on their own',
+      'Resolving software, hardware, and network issues for students and faculty using Active Directory, Intune, Jamf, and diagnostic tools',
     ],
     note: 'Internal university systems are not shown.',
     links: [],
