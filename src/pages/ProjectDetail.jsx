@@ -26,7 +26,7 @@ function Bullets({ items }) {
 
 // The outcome up front, for someone skimming: one sentence on what changed
 // and for whom, then the counts that back it. Only numbers from the write-up
-// itself go in `stats` — no estimated savings.
+// itself go in `stats`, with no estimated savings.
 function Impact({ impact }) {
   return (
     <div className="mt-6 rounded-xl bg-cream p-5 sm:p-6">
@@ -48,8 +48,8 @@ function Impact({ impact }) {
   )
 }
 
-// The highlighted closing statement — an `outcome` string, or a `takeaway`
-// with a label ("What I did").
+// The highlighted closing statement: an `outcome` string, or a `takeaway`
+// with a label ("Value Provided").
 function Callout({ label, children }) {
   return (
     <p
@@ -63,7 +63,7 @@ function Callout({ label, children }) {
 }
 
 // One project inside a multi-project engagement. Same shape as a standalone
-// project page, minus the visual — the glyph badge carries that job here.
+// project page, minus the visual. The glyph badge carries that job here.
 function ProjectSection({ section, index }) {
   return (
     <Reveal delay={index * 0.06} className="mt-8">
@@ -113,7 +113,7 @@ export default function ProjectDetail() {
   const project = getProject(slug)
 
   useEffect(() => {
-    if (project) document.title = `${project.title} — Reece Bunnage`
+    if (project) document.title = `${project.title} | Reece Bunnage`
   }, [project])
 
   if (!project) return <Navigate to="/projects" replace />

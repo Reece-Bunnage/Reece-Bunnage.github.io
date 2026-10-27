@@ -43,7 +43,7 @@ const GLYPHS = {
       <path d="M20 28v8M16 32h8M40 30h.01M46 36h.01" />
     </>
   ),
-  // A rule list where one row has been unlatched — the per-rule bypass.
+  // A rule list where one row has been unlatched: the per-rule bypass.
   rules: (
     <>
       <path d="M12 18h28M12 32h28M12 46h16" />
@@ -58,7 +58,7 @@ const GLYPHS = {
       <circle cx="32" cy="32" r="4" />
     </>
   ),
-  // A certification seal — ribboned medal. Used on /credentials.
+  // A certification seal, a ribboned medal. Used on /credentials.
   badge: (
     <>
       <circle cx="32" cy="24" r="14" />
@@ -75,7 +75,7 @@ const GLYPHS = {
   ),
 }
 
-// The same glyph set drawn inline for use on a light surface — no dark plate,
+// The same glyph set drawn inline for use on a light surface, with no dark plate,
 // no fixed size. Used for the per-section badges on a multi-section case study.
 export function Glyph({ icon, className = '' }) {
   return (

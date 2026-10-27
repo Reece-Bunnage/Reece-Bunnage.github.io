@@ -42,7 +42,7 @@ function StatusBadge({ status, date }) {
           : 'inline-block rounded-full border border-steel px-3 py-1 text-xs font-semibold text-ground'
       }
     >
-      {earned ? `${status} ${date}` : `${status} — ${date}`}
+      {earned ? `${status} ${date}` : `${status}: ${date}`}
     </p>
   )
 }
@@ -64,7 +64,7 @@ function CertCard({ cert }) {
 
 export default function Credentials() {
   useEffect(() => {
-    document.title = 'Credentials — Reece Bunnage'
+    document.title = 'Credentials | Reece Bunnage'
   }, [])
 
   return (
@@ -72,7 +72,7 @@ export default function Credentials() {
       <Band tone="paper">
         <SectionHeading
           title="Credentials"
-          subtitle="Certifications, coursework, and competitions — including the ones I'm still working toward. Anything in progress says so, with the date I'm sitting it."
+          subtitle="Certifications, coursework, and competitions, including the ones I'm still working toward. Anything in progress says so, with the date I'm sitting it."
         />
 
         <div className="grid gap-6 sm:grid-cols-2">

@@ -8,7 +8,7 @@ import { mainProjects, otherProjects, writing } from '../data/projects.js'
 
 export default function Projects() {
   useEffect(() => {
-    document.title = 'Projects — Reece Bunnage'
+    document.title = 'Projects | Reece Bunnage'
   }, [])
 
   return (
@@ -30,7 +30,7 @@ export default function Projects() {
       <Band tone="cream">
         <SectionHeading
           title="Other Development Projects"
-          subtitle="Smaller builds — mostly experiments in how far AI-assisted development goes."
+          subtitle="Smaller builds, mostly experiments in how far AI-assisted development goes."
         />
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {otherProjects.map((project, i) => (

@@ -11,7 +11,7 @@ import { profile } from '../data/profile.js'
 
 export default function Home() {
   useEffect(() => {
-    document.title = `${profile.name} — ${profile.role}`
+    document.title = `${profile.name} | ${profile.role}`
   }, [])
 
   return (
@@ -43,8 +43,8 @@ export default function Home() {
                            decoration-2 underline-offset-2 hover:decoration-ground"
               >
                 {writing[0].title}
-              </Link>{' '}
-              &mdash; an introduction to security for new business owners, through
+              </Link>
+              : an introduction to security for new business owners, through
               the three little pigs.
             </p>
           )}

@@ -41,7 +41,7 @@ function Pills({ items }) {
 
 export default function About() {
   useEffect(() => {
-    document.title = 'About — Reece Bunnage'
+    document.title = 'About | Reece Bunnage'
   }, [])
 
   return (

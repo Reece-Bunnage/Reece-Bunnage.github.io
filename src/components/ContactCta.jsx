@@ -12,8 +12,8 @@ export default function ContactCta() {
           <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-mist">
             I&rsquo;m looking for internships and project work in cybersecurity,
             automation, and business systems consulting. If you have a manual
-            process that should not be manual &mdash; or an access model nobody has
-            reviewed in a while &mdash; I&rsquo;d like to hear about it.
+            process that should not be manual, or an access model nobody has
+            reviewed in a while, I&rsquo;d like to hear about it.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <a href={`mailto:${profile.email}`} className="btn-on-dark">

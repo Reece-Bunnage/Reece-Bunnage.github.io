@@ -21,7 +21,7 @@ export default function Timeline({ items }) {
             <p className="mt-1 text-sm font-semibold text-smoke-mid">
               {item.org}
               {item.orgNote && (
-                <span className="font-normal italic"> &mdash; {item.orgNote}</span>
+                <span className="font-normal italic">, {item.orgNote}</span>
               )}
               {item.location && <span className="font-normal"> &middot; {item.location}</span>}
             </p>

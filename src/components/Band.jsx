@@ -1,5 +1,5 @@
 // Full-bleed section background. The pages use `.shell` for width, which means
-// there is no element spanning the viewport to paint — this wraps one around it.
+// there is no element spanning the viewport to paint, so this wraps one around it.
 const TONES = {
   paper: 'bg-white',
   cream: 'bg-cream',

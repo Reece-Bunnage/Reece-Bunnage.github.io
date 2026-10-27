@@ -3,11 +3,11 @@ export const profile = {
   role: 'Technology Consultant',
   location: 'Utah',
   tagline:
-    "I make the systems people depend on actually work for them — automating the manual work, designing around how teams really operate, and making sure it's secure enough to trust.",
+    "I make the systems people depend on actually work for them: automating the manual work, designing around how teams really operate, and making sure it's secure enough to trust.",
   intro: [
     "I'm an Information Systems student at BYU's Marriott School of Business, minoring in Cybersecurity and Computer Science, and an automation consultant at SOLVD.cloud.",
     "Most of what I do comes down to the same pattern: find the step where a team is doing something by hand, understand why it works that way, and rebuild it so the system does it instead. At SOLVD that looks like requirements, solution design, and QA on a Salesforce CPQ implementation for an enterprise client. At BYU's Department of Physics and Astronomy it has looked like identity and endpoint administration across Active Directory, Intune, and Jamf, an access review that pulled inactive accounts and unmanaged devices out of the directory, and a knowledge base that keeps the same question from getting asked twice.",
-    "What ties it together is that a system is only worth building if people can rely on it — which means it has to fit how they actually work, and it has to be secure. That's why identity, access, and controls run through all of it: they decide who is allowed to do what, and they're usually where a well-built system quietly breaks. I'm working toward CompTIA Security+, and applying to BYU's five-year integrated MISM program for the leadership and project management half of consulting that technical coursework doesn't cover.",
+    "What ties it together is that a system is only worth building if people can rely on it, which means it has to fit how they actually work, and it has to be secure. That's why identity, access, and controls run through all of it: they decide who is allowed to do what, and they're usually where a well-built system quietly breaks. I'm working toward CompTIA Security+, and applying to BYU's five-year integrated MISM program for the leadership and project management half of consulting that technical coursework doesn't cover.",
   ],
   email: 'rjbunnage@gmail.com',
   linkedin: 'https://www.linkedin.com/in/reece-bunnage/',
@@ -17,7 +17,7 @@ export const profile = {
 }
 
 export const education = {
-  school: 'Brigham Young University — Marriott School of Business',
+  school: 'Brigham Young University, Marriott School of Business',
   location: 'Provo, UT',
   degrees: [
     {
@@ -42,7 +42,7 @@ export const certifications = [
     issuer: 'Anthropic',
     status: 'Earned',
     date: '2026',
-    what: "Designing and deploying systems built on Claude. What it's worth on client work isn't that I can prompt well — it's knowing where a model's output stops being trustworthy.",
+    what: "Designing and deploying systems built on Claude. What it's worth on client work isn't that I can prompt well. It's knowing where a model's output stops being trustworthy.",
   },
   {
     name: 'AWS Certified Cloud Practitioner',
@@ -56,44 +56,44 @@ export const certifications = [
     issuer: 'Salesforce',
     status: 'Earned',
     date: '2025',
-    what: 'Platform configuration and the security model — profiles, permission sets, and record-level sharing. The access-design half of it is what I use most.',
+    what: 'Platform configuration and the security model: profiles, permission sets, and record-level sharing. The access-design half of it is what I use most.',
   },
   {
     name: 'CompTIA Security+',
     issuer: 'CompTIA',
     status: 'In progress',
     date: 'Target early 2027',
-    what: 'The baseline credential for security work — threat types, secure architecture, risk management, and the controls that mitigate them.',
+    what: 'The baseline credential for security work: threat types, secure architecture, risk management, and the controls that mitigate them.',
   },
 ]
 
 // IS junior core first (what I'm in now), then technical courses, then the
-// Marriott business core as one entry — listed individually it would bury the
+// Marriott business core as one entry; listed individually it would bury the
 // technical work.
 export const coursework = [
   {
     code: 'IS 401',
     name: 'Project Management and Systems Design',
-    note: 'IS junior core — Fall 2026',
-    what: 'Requirements, system design, and running the project that delivers it — taking a business need to a buildable spec.',
+    note: 'IS junior core, Fall 2026',
+    what: 'Requirements, system design, and running the project that delivers it, taking a business need to a buildable spec.',
   },
   {
     code: 'IS 402',
     name: 'Database Systems',
-    note: 'IS junior core — Fall 2026',
+    note: 'IS junior core, Fall 2026',
     what: 'Relational modeling, normalization, and SQL.',
   },
   {
     code: 'IS 403',
     name: 'Principles of Business Programming',
-    note: 'IS junior core — Fall 2026',
+    note: 'IS junior core, Fall 2026',
     what: 'Building data-driven business applications.',
   },
   {
     code: 'IS 404',
     name: 'Information Technology Infrastructure',
-    note: 'IS junior core — Fall 2026',
-    what: 'The networks, servers, and cloud services business systems run on — and where they can be exposed.',
+    note: 'IS junior core, Fall 2026',
+    what: 'The networks, servers, and cloud services business systems run on, and where they can be exposed.',
   },
   {
     code: 'ACC 551',
@@ -115,7 +115,7 @@ export const coursework = [
     code: 'FIN 201 · MKTG 201 · GSCM 201 · ECON 110 · MCOM 320',
     name: 'Marriott Business Core',
     note: 'Principles of Finance, Marketing Management, Intro to Global Supply Chain Management, Economic Principles & Problems, Communication in Organizational Settings',
-    what: 'The side of the business the systems serve — how a company makes money, reaches customers, and moves product, and how to make a case to the people who decide.',
+    what: 'The side of the business the systems serve: how a company makes money, reaches customers, and moves product, and how to make a case to the people who decide.',
   },
 ]
 
@@ -191,8 +191,8 @@ export const skills = [
 // Certifications moved to /credentials; what is left here is recognition.
 export const awards = [
   { title: 'BYU Full Academic Scholarship', note: 'Award' },
-  { title: 'Dean’s List', note: 'Award — 4 semesters' },
-  { title: 'SOLVD.cloud Team Award', note: 'Award — January 2026' },
+  { title: 'Dean’s List', note: 'Award, 4 semesters' },
+  { title: 'SOLVD.cloud Team Award', note: 'Award, January 2026' },
   {
     title: 'Texas State UIL Computer Applications',
     note: 'Competitor',
